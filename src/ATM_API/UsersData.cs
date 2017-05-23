@@ -1,0 +1,59 @@
+﻿using ATM_API.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace ATM_API
+{
+    public class UsersData
+    {
+        public static UsersData current { get; } = new UsersData();
+
+        public List<UserModel> Users { get; set; }
+
+        public UsersData()
+        {
+            Users = new List<UserModel>()
+            {
+                new UserModel()
+                {
+                    Username="galpizar",
+                    Password ="123456",
+                    FullName="Gustavo Alpizar Herrera",
+                    AccountDetails = new List<AccountDetailsModel>()
+                    {
+                        new AccountDetailsModel()
+                        {
+                            Id_Account=1,
+                            CurrencyType="Dollar",
+                            CreatedDate = DateTime.Today,
+                            isActive=true,
+                            TotalAmount=1250000.98,
+                            TransactionHistory = new List<TransactionHistoryModel>()
+                            {
+                                new TransactionHistoryModel()
+                                {
+                                    Id_transacion = 1,
+                                    TransactionAmount=5000.98,
+                                    TransactionDate=DateTime.Parse( "2017/08/09"),
+                                    TransactionType="Telephone Debit",
+                                    Description="Montly telephone payment"
+
+                                }
+                            }
+                        }
+                    }
+
+                },
+                new UserModel()
+                 {
+                    Username="test",
+                    Password ="123456",
+                    FullName="Test Test Test"
+
+                }
+            };
+        }
+    }
+}
