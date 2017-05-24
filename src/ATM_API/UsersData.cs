@@ -26,6 +26,28 @@ namespace ATM_API
                         new AccountDetailsModel()
                         {
                             Id_Account=1,
+                            Description = "First Account",
+                            CurrencyType="Dollar",
+                            CreatedDate = DateTime.Today,
+                            isActive=true,
+                            TotalAmount=1250000.98,
+                            TransactionHistory = new List<TransactionHistoryModel>()
+                            {
+                                new TransactionHistoryModel()
+                                {
+                                    Id_transacion = 1,
+                                    TransactionAmount=5000.98,
+                                    TransactionDate=DateTime.Parse( "2017/08/09"),
+                                    TransactionType="Telephone Debit",
+                                    Description="Montly telephone payment"
+
+                                }
+                            }
+                        },
+                        new AccountDetailsModel()
+                        {
+                            Id_Account=2,
+                            Description = "Second Account",
                             CurrencyType="Dollar",
                             CreatedDate = DateTime.Today,
                             isActive=true,

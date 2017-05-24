@@ -11,17 +11,19 @@ namespace ATM_API.Controllers
     [Route("api/Users")]
     public class TransactionHistory : Controller
     {
-        [HttpGet("{username}/AccountDetails/TransactionHistory")]
-        public IActionResult GetTransactionHistory(string username)
+        [HttpGet("{username}/{password}/AccountDetails/{idAccount}/TransactionHistory")]
+        public IActionResult GetTransactionHistory(string username,string password,int idAccount)
         {
-            var user = UsersData.current.Users.FirstOrDefault(c => c.Username == username);
+            var user = UsersData.current.Users.FirstOrDefault(c => c.Username == username & c.Password == password);
             if (user == null)
             {
                 return NotFound();
             }
-            var account = user.AccountDetails.FirstOrDefault();
+            var account = user.AccountDetails.FirstOrDefault(a => a.Id_Account ==idAccount);
             return Ok(account.TransactionHistory);
         }
+
+
         
     }
 }

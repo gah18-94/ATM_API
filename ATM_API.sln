@@ -7,10 +7,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{7984208C-5B6
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B9679C1F-D0AE-4BD4-A797-D3CEEA957FF8}"
 	ProjectSection(SolutionItems) = preProject
+		DockerFile = DockerFile
 		global.json = global.json
 	EndProjectSection
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "ATM_API", "src\ATM_API\ATM_API.xproj", "{7B800A0E-3573-4162-9070-E87B8C0883C8}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "DataAccessLayer", "DataAccessLayer\DataAccessLayer.xproj", "{5C9544E5-9C61-4FF8-B0AA-8EED23CB728A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -22,11 +25,16 @@ Global
 		{7B800A0E-3573-4162-9070-E87B8C0883C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7B800A0E-3573-4162-9070-E87B8C0883C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7B800A0E-3573-4162-9070-E87B8C0883C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C9544E5-9C61-4FF8-B0AA-8EED23CB728A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C9544E5-9C61-4FF8-B0AA-8EED23CB728A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C9544E5-9C61-4FF8-B0AA-8EED23CB728A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C9544E5-9C61-4FF8-B0AA-8EED23CB728A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{7B800A0E-3573-4162-9070-E87B8C0883C8} = {7984208C-5B6D-4976-8FD2-C69CDB030A56}
+		{5C9544E5-9C61-4FF8-B0AA-8EED23CB728A} = {7984208C-5B6D-4976-8FD2-C69CDB030A56}
 	EndGlobalSection
 EndGlobal

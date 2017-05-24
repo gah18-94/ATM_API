@@ -12,10 +12,10 @@ namespace ATM_API.Controllers
     public class AccountDetailsController : Controller
     {
        
-        [HttpGet("{username}/AccountDetails")]
-        public IActionResult GetAccountDetails(string username)
+        [HttpGet("{username}/{password}/AccountDetails")]
+        public IActionResult GetAccountDetails(string username,string password)
         {
-            var user = UsersData.current.Users.FirstOrDefault(c => c.Username == username);
+            var user = UsersData.current.Users.FirstOrDefault(c => c.Username == username & c.Password == password);
             if(user == null)
             {
                 return NotFound();

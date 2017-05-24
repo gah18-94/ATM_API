@@ -18,11 +18,11 @@ namespace ATM_API.Controllers
             return Ok( UsersData.current.Users);
         }
 
-        [HttpGet("{username}")]
-        public IActionResult ValidateUser(string username)
+        [HttpGet("{username}/{password}")]
+        public IActionResult ValidateUser(string username,string password)
         {
 
-            var user = UsersData.current.Users.FirstOrDefault(c => c.Username == username);
+            var user = UsersData.current.Users.FirstOrDefault(c => c.Username == username & c.Password==password);
                 if(user == null)
             {
                 return NotFound();
@@ -30,25 +30,6 @@ namespace ATM_API.Controllers
             return Ok(user);
             
         }
-
-       /* [HttpGet("{id}")]
-        public IActionResult Login(string username, string pwd)
-        {
-            var user = _cityInfoRepository.GetCity(id, includePointsOfInterest);
-
-            if (user == null)
-            {
-                return NotFound();
-            }
-
-            if (includePointsOfInterest)
-            {
-                var cityResult = Mapper.Map<CityDto>(city);
-                return Ok(cityResult);
-            }
-
-            var cityWithoutPointsOfInterestResult = Mapper.Map<CityWithoutPointsOfInterestDto>(city);
-            return Ok(cityWithoutPointsOfInterestResult);
-        }*/
+        
     }
 }
