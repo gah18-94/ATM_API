@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using DataAccessLayer.Models;
 
 namespace ATM_API
 {
@@ -16,6 +17,9 @@ namespace ATM_API
         // For more information on how to configure your application, visit http://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddSingleton(_config);
+
+            services.AddDbContext<ATM_context>;
             services.AddMvc();
         }
 
@@ -24,11 +28,11 @@ namespace ATM_API
         {
             loggerFactory.AddConsole();
 
-            if (env.IsDevelopment())
+            if (env.IsDevelopment() || env.IsStaging())
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            
             app.UseStatusCodePages();
             app.UseMvc();
 

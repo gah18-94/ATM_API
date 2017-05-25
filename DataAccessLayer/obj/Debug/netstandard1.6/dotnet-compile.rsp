@@ -56,4 +56,7 @@
 --reference:C:\Users\c18879a\.nuget\packages\System.Xml.ReaderWriter\4.0.11\ref\netstandard1.3\System.Xml.ReaderWriter.dll
 --reference:C:\Users\c18879a\.nuget\packages\System.Xml.XDocument\4.0.11\ref\netstandard1.3\System.Xml.XDocument.dll
 C:\Users\c18879a\documents\visual studio 2015\Projects\ATM_API\DataAccessLayer\Class1.cs
+C:\Users\c18879a\documents\visual studio 2015\Projects\ATM_API\DataAccessLayer\Models\AccountDetailsModel.cs
+C:\Users\c18879a\documents\visual studio 2015\Projects\ATM_API\DataAccessLayer\Models\TransactionHistoryModel.cs
+C:\Users\c18879a\documents\visual studio 2015\Projects\ATM_API\DataAccessLayer\Models\UserModel.cs
 C:\Users\c18879a\documents\visual studio 2015\Projects\ATM_API\DataAccessLayer\Properties\AssemblyInfo.cs
