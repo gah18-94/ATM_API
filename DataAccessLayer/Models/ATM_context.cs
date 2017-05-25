@@ -17,7 +17,7 @@ namespace DataAccessLayer.Models
 
         public DbSet<UserModel> User { get; set; }
         public DbSet<AccountDetailsModel> AccountDetails { get; set; }
-        public DbSet<TransactionHistoryModel> TransacionHistory{ get; set; }
+        public DbSet<TransactionHistoryModel> TransacionHistorys{ get; set; }
 
     }
 }
