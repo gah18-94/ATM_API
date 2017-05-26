@@ -7,9 +7,15 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+<<<<<<< HEAD
 using DataAccessLayer.Service;
 using Microsoft.Extensions.Configuration;
 using DataAccessLayer;
+=======
+using DataAccessLayer;
+using Microsoft.Extensions.Configuration;
+using DataAccessLayer.Models;
+>>>>>>> 18bf031ccf7906fbe3f10a1bdd66b3cf693d90ce
 using Microsoft.EntityFrameworkCore;
 
 namespace ATM_API
@@ -26,20 +32,31 @@ namespace ATM_API
 
             var builder = new ConfigurationBuilder()
               .SetBasePath(_env.ContentRootPath)
-              .AddJsonFile("config.json");
-             /* .AddEnvironmentVariables();*/
+              .AddJsonFile("config.json")
+             .AddEnvironmentVariables();
 
             _config = builder.Build();
+            
         }
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit http://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSingleton(_config);
+<<<<<<< HEAD
             services.AddScoped<IATM_Repository, ATM_Repository>();
             var connectionString = _config["connectionStrings:ATMConnection"];
             services.AddDbContext<ATM_context>(o => o.UseSqlServer(connectionString));
+=======
+            /*services.AddDbContext<ATM_context>(options =>
+            options.UseSqlServer(_config.GetConnectionString("ATMConnection")));
+            */
+>>>>>>> 18bf031ccf7906fbe3f10a1bdd66b3cf693d90ce
             services.AddMvc();
+            var connection = Startup._config["connectionStrings:ATMConnection"];
+
+            services.AddDbContext<ATM_context>(options => options.UseSqlServer(connection));
+            services.AddScoped<IATM_Repository, ATM_Repository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -52,7 +69,7 @@ namespace ATM_API
                 app.UseDeveloperExceptionPage();
             }
             
-            app.UseStatusCodePages();
+            /*app.UseStatusCodePages();*/
             app.UseMvc();
 
             /* app.Run(async (context) =>
