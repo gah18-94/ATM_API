@@ -18,6 +18,7 @@ namespace ATM_API
             {
                 new UserModel()
                 {
+                    Id_User = 1,
                     Username="galpizar",
                     Password ="123456",
                     FullName="Gustavo Alpizar Herrera",
@@ -35,7 +36,7 @@ namespace ATM_API
                             {
                                 new TransactionHistoryModel()
                                 {
-                                    Id_transacion = 1,
+                                    Id_Transaction = 1,
                                     TransactionAmount=5000.98,
                                     TransactionDate=DateTime.Parse( "2017/08/09"),
                                     TransactionType="Telephone Debit",
@@ -56,7 +57,7 @@ namespace ATM_API
                             {
                                 new TransactionHistoryModel()
                                 {
-                                    Id_transacion = 1,
+                                    Id_Transaction = 1,
                                     TransactionAmount=5000.98,
                                     TransactionDate=DateTime.Parse( "2017/08/09"),
                                     TransactionType="Telephone Debit",
@@ -70,6 +71,7 @@ namespace ATM_API
                 },
                 new UserModel()
                  {
+                    Id_User =2,
                     Username="test",
                     Password ="123456",
                     FullName="Test Test Test"

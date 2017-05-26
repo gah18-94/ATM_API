@@ -7,7 +7,7 @@ namespace ATM_API.Models
 {
     public class TransactionHistoryModel
     {
-        public int Id_transacion { get; set; }
+        public int Id_Transaction { get; set; }
         public string TransactionType { get; set; }
         public DateTime TransactionDate { get; set; }
         public double TransactionAmount { get; set; }
