@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using ATM_API.Models;
 
-namespace DataAccessLayer.Models
+namespace DataAccessLayer.Service
 {
     public class ATM_Repository : IATM_Repository
     {

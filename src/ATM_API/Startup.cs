@@ -7,9 +7,10 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using DataAccessLayer.Models;
+using DataAccessLayer.Service;
 using Microsoft.Extensions.Configuration;
-
+using DataAccessLayer;
+using Microsoft.EntityFrameworkCore;
 
 namespace ATM_API
 {
@@ -17,7 +18,7 @@ namespace ATM_API
     {
 
         private IHostingEnvironment _env;
-        private IConfigurationRoot _config;
+        public static IConfigurationRoot _config;
 
         public Startup(IHostingEnvironment env)
         {
@@ -35,8 +36,9 @@ namespace ATM_API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSingleton(_config);
-
-            services.AddDbContext<ATM_context>();
+            services.AddScoped<IATM_Repository, ATM_Repository>();
+            var connectionString = _config["connectionStrings:ATMConnection"];
+            services.AddDbContext<ATM_context>(o => o.UseSqlServer(connectionString));
             services.AddMvc();
         }
 

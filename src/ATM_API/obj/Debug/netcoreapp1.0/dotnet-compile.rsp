@@ -57,6 +57,11 @@
 --reference:C:\Users\c18879a\.nuget\packages\Microsoft.CSharp\4.3.0\ref\netstandard1.0\Microsoft.CSharp.dll
 --reference:C:\Users\c18879a\.nuget\packages\Microsoft.DotNet.PlatformAbstractions\1.1.2\lib\netstandard1.3\Microsoft.DotNet.PlatformAbstractions.dll
 --reference:C:\Users\c18879a\.nuget\packages\Microsoft.EntityFrameworkCore\1.1.2\lib\netstandard1.3\Microsoft.EntityFrameworkCore.dll
+--reference:C:\Users\c18879a\.nuget\packages\Microsoft.EntityFrameworkCore.Design\1.1.2\lib\netstandard1.3\Microsoft.EntityFrameworkCore.Design.dll
+--reference:C:\Users\c18879a\.nuget\packages\Microsoft.EntityFrameworkCore.Relational\1.1.2\lib\netstandard1.3\Microsoft.EntityFrameworkCore.Relational.dll
+--reference:C:\Users\c18879a\.nuget\packages\Microsoft.EntityFrameworkCore.Relational.Design\1.1.2\lib\netstandard1.3\Microsoft.EntityFrameworkCore.Relational.Design.dll
+--reference:C:\Users\c18879a\.nuget\packages\Microsoft.EntityFrameworkCore.SqlServer\1.1.2\lib\netstandard1.3\Microsoft.EntityFrameworkCore.SqlServer.dll
+--reference:C:\Users\c18879a\.nuget\packages\Microsoft.EntityFrameworkCore.SqlServer.Design\1.1.2\lib\netstandard1.3\Microsoft.EntityFrameworkCore.SqlServer.Design.dll
 --reference:C:\Users\c18879a\.nuget\packages\Microsoft.Extensions.Caching.Abstractions\1.1.2\lib\netstandard1.0\Microsoft.Extensions.Caching.Abstractions.dll
 --reference:C:\Users\c18879a\.nuget\packages\Microsoft.Extensions.Caching.Memory\1.1.2\lib\netstandard1.3\Microsoft.Extensions.Caching.Memory.dll
 --reference:C:\Users\c18879a\.nuget\packages\Microsoft.Extensions.Configuration\1.0.0\lib\netstandard1.1\Microsoft.Extensions.Configuration.dll
@@ -99,6 +104,8 @@
 --reference:C:\Users\c18879a\.nuget\packages\System.ComponentModel.Primitives\4.3.0\ref\netstandard1.0\System.ComponentModel.Primitives.dll
 --reference:C:\Users\c18879a\.nuget\packages\System.ComponentModel.TypeConverter\4.3.0\ref\netstandard1.5\System.ComponentModel.TypeConverter.dll
 --reference:C:\Users\c18879a\.nuget\packages\System.Console\4.3.0\ref\netstandard1.3\System.Console.dll
+--reference:C:\Users\c18879a\.nuget\packages\System.Data.Common\4.3.0\ref\netstandard1.2\System.Data.Common.dll
+--reference:C:\Users\c18879a\.nuget\packages\System.Data.SqlClient\4.3.1\ref\netstandard1.3\System.Data.SqlClient.dll
 --reference:C:\Users\c18879a\.nuget\packages\System.Diagnostics.Contracts\4.3.0\ref\netstandard1.0\System.Diagnostics.Contracts.dll
 --reference:C:\Users\c18879a\.nuget\packages\System.Diagnostics.Debug\4.3.0\ref\netstandard1.3\System.Diagnostics.Debug.dll
 --reference:C:\Users\c18879a\.nuget\packages\System.Diagnostics.DiagnosticSource\4.3.1\lib\netstandard1.3\System.Diagnostics.DiagnosticSource.dll
@@ -124,10 +131,10 @@
 --reference:C:\Users\c18879a\.nuget\packages\System.Linq.Parallel\4.0.1\ref\netstandard1.1\System.Linq.Parallel.dll
 --reference:C:\Users\c18879a\.nuget\packages\System.Linq.Queryable\4.3.0\ref\netstandard1.0\System.Linq.Queryable.dll
 --reference:C:\Users\c18879a\.nuget\packages\System.Net.Http\4.3.0\ref\netstandard1.3\System.Net.Http.dll
---reference:C:\Users\c18879a\.nuget\packages\System.Net.NameResolution\4.0.0\ref\netstandard1.3\System.Net.NameResolution.dll
+--reference:C:\Users\c18879a\.nuget\packages\System.Net.NameResolution\4.3.0\ref\netstandard1.3\System.Net.NameResolution.dll
 --reference:C:\Users\c18879a\.nuget\packages\System.Net.Primitives\4.3.0\ref\netstandard1.3\System.Net.Primitives.dll
 --reference:C:\Users\c18879a\.nuget\packages\System.Net.Requests\4.0.11\ref\netstandard1.3\System.Net.Requests.dll
---reference:C:\Users\c18879a\.nuget\packages\System.Net.Security\4.0.0\ref\netstandard1.3\System.Net.Security.dll
+--reference:C:\Users\c18879a\.nuget\packages\System.Net.Security\4.3.0\ref\netstandard1.3\System.Net.Security.dll
 --reference:C:\Users\c18879a\.nuget\packages\System.Net.Sockets\4.3.0\ref\netstandard1.3\System.Net.Sockets.dll
 --reference:C:\Users\c18879a\.nuget\packages\System.Net.WebHeaderCollection\4.0.1\ref\netstandard1.3\System.Net.WebHeaderCollection.dll
 --reference:C:\Users\c18879a\.nuget\packages\System.Net.WebSockets\4.3.0\ref\netstandard1.3\System.Net.WebSockets.dll
@@ -167,7 +174,7 @@
 --reference:C:\Users\c18879a\.nuget\packages\System.Threading.Tasks.Extensions\4.3.0\lib\netstandard1.0\System.Threading.Tasks.Extensions.dll
 --reference:C:\Users\c18879a\.nuget\packages\System.Threading.Tasks.Parallel\4.0.1\ref\netstandard1.1\System.Threading.Tasks.Parallel.dll
 --reference:C:\Users\c18879a\.nuget\packages\System.Threading.Thread\4.3.0\ref\netstandard1.3\System.Threading.Thread.dll
---reference:C:\Users\c18879a\.nuget\packages\System.Threading.ThreadPool\4.0.10\ref\netstandard1.3\System.Threading.ThreadPool.dll
+--reference:C:\Users\c18879a\.nuget\packages\System.Threading.ThreadPool\4.3.0\ref\netstandard1.3\System.Threading.ThreadPool.dll
 --reference:C:\Users\c18879a\.nuget\packages\System.Threading.Timer\4.3.0\ref\netstandard1.2\System.Threading.Timer.dll
 --reference:C:\Users\c18879a\.nuget\packages\System.Xml.ReaderWriter\4.3.0\ref\netstandard1.3\System.Xml.ReaderWriter.dll
 --reference:C:\Users\c18879a\.nuget\packages\System.Xml.XDocument\4.3.0\ref\netstandard1.3\System.Xml.XDocument.dll
