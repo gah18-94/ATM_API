@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Collections;
 using ATM_API.Models;
 using DataAccessLayer.Models;
+using DataAccessLayer;
 
 // For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -14,11 +15,13 @@ namespace ATM_API.Controllers
     [Route("api/Users")]
     public class UserController : Controller
     {
-        private ATM_Repository repo ;
+        private IATM_Repository repo ;
+        private ATM_context context;
 
-        public UserController(ATM_Repository _repo)
+        public UserController(IATM_Repository _repo, ATM_context _context)
         {
             repo = _repo;
+            context = _context;
         }
 
         [HttpGet()]

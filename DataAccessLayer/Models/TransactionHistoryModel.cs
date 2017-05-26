@@ -12,5 +12,6 @@ namespace ATM_API.Models
         public DateTime TransactionDate { get; set; }
         public double TransactionAmount { get; set; }
         public string Description { get; set; }
+        public int Id_Account { get; set; }
     }
 }
