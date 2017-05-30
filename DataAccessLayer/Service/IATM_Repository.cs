@@ -9,6 +9,7 @@ namespace DataAccessLayer.Service
     public interface IATM_Repository
     {
         UserModel ValidateUser(string username, string password);
+        bool UserExist(string username, string password);
 
     }
 }

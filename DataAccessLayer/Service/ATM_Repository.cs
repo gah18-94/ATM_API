@@ -16,7 +16,27 @@ namespace DataAccessLayer.Service
         }
         public UserModel ValidateUser(string username, string password)
         {
-            return _context.User.Where(u => u.Username == username && u.Password == password).FirstOrDefault();
+           
+            return _context.Users.Where(u => u.Username == username && u.Password == password).FirstOrDefault();
+        
         }
+
+        public bool UserExist( string username, string password) {
+            if (!_context.Users.Any(u => u.Username == username))
+            {
+                return false;
+            }
+            else
+            {
+                if(_context.Users.Any(u => u.Username == username && u.Password == password))
+                {
+                    return true;
+                }
+                return false;
+            }
+        }
+
+
+
     }
 }
