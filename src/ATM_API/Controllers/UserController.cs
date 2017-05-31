@@ -20,26 +20,27 @@ namespace ATM_API.Controllers
         {
             repo = _repo;
         }
-
-        [HttpGet()]
-        public IActionResult GetUser()
-        {
-
-            return Ok( UsersData.current.Users);
-        }
-
+        
         [HttpGet("{username}/{password}")]
         public IActionResult ValidateUser(string username,string password)
         {
-            
-            if (!repo.UserExist(username, password))
+
+            try
             {
-                return Ok(false);
+                if (!repo.UserExist(username, password))
+                {
+                    return Ok(false);
+                }
+                else
+                {
+                    var user = repo.GetDataUser(username, password);
+                    return Ok(user);
+                }
             }
-            else
+            catch (System.Exception)
             {
-                var user = repo.ValidateUser(username, password);
-                return Ok(user);
+
+                throw;
             }
             
         

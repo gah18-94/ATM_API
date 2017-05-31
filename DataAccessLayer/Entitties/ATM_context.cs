@@ -14,7 +14,15 @@ namespace DataAccessLayer
         public ATM_context(DbContextOptions<ATM_context> options ) 
             :base(options)
         {
-            Database.EnsureCreated();
+            try
+            {
+                Database.EnsureCreated();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         public DbSet<UserModel> Users { get; set; }
