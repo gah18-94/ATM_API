@@ -54,24 +54,40 @@ namespace ATM_API.Controllers
             }
         }
 
-        [HttpPost("/{username}/{password}/Dispense/{Id_Account}/{Amount}")]
-        public async Task<IActionResult>  Dispense(string username, string password, string Id_Account, double amount)
+        [HttpPost("Dispense/{Id_Account}/{Amount}/{Description}")]
+        public IActionResult Dispense(string username, string password, int Id_Account, decimal Amount, string Description)
         {
             try
             {
-                
+                if (repo.AvailableMoney(Id_Account, Amount))
+                {
+                    var response = repo.DispenseMoney(Id_Account, Amount, Description);
+                    if (response)
+                    {
+                        return Ok("Transaction succesfully added.");
+                    }
+                    else
+                    {
+                        return BadRequest("Transaction failed.");
+                    }
+                }
+                else
+                {
+                    return BadRequest("There aren't enough money in the account.");
+                }
+
+
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw;
             }
+            
 
-            return BadRequest("Failed to save");
-        
-    }   
-
+        }
 
 
-        
+
+
     }
 }

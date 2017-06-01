@@ -12,7 +12,7 @@ namespace ATM_API
 
         public List<UserModel> Users { get; set; }
 
-        public UsersData()
+      /*  public UsersData()
         {
             Users = new List<UserModel>()
             {
@@ -31,13 +31,13 @@ namespace ATM_API
                             CurrencyType="Dollar",
                             CreatedDate = DateTime.Today,
                             isActive=true,
-                            TotalAmount=1250000.98,
+                            TotalAmount=1250000,
                             TransactionHistory = new List<TransactionHistoryModel>()
                             {
                                 new TransactionHistoryModel()
                                 {
                                     Id_Transaction = 1,
-                                    TransactionAmount=5000.98,
+                                    TransactionAmount= float.Parse((5000.98).ToString()),
                                     TransactionDate=DateTime.Parse( "2017/08/09"),
                                     TransactionType="Telephone Debit",
                                     Description="Montly telephone payment"
@@ -52,13 +52,13 @@ namespace ATM_API
                             CurrencyType="Dollar",
                             CreatedDate = DateTime.Today,
                             isActive=true,
-                            TotalAmount=1250000.98,
+                            TotalAmount= float.Parse((1250000.98).ToString()),
                             TransactionHistory = new List<TransactionHistoryModel>()
                             {
                                 new TransactionHistoryModel()
                                 {
                                     Id_Transaction = 1,
-                                    TransactionAmount=5000.98,
+                                    TransactionAmount= float.Parse((5000.98).ToString()),
                                     TransactionDate=DateTime.Parse( "2017/08/09"),
                                     TransactionType="Telephone Debit",
                                     Description="Montly telephone payment"
@@ -78,6 +78,6 @@ namespace ATM_API
 
                 }
             };
-        }
+        }*/
     }
 }
