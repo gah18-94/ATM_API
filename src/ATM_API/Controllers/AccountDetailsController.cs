@@ -22,16 +22,32 @@ namespace ATM_API.Controllers
             repo = _repo;
         }
 
-        [HttpGet("{username}/{password}/Account")]
+        [HttpGet("{username}/{password}/Accounts")]
         public IActionResult GetAccountsDropDown(string username, string password)
         {
             try
             {
-                var Id_user = repo.GetUserID(username, password);
+                if (!repo.UserExist(username, password))
+                {
+                    return BadRequest("Wrong username or password, please try again.");
+                }
+                else
+                {
+                    
+                    var Id_user = repo.GetUserID(username, password);
 
-                var accounts = repo.GetAccountsDropDown(Int16.Parse(Id_user));
+                    var accounts = repo.GetAccountsDropDown(Int16.Parse(Id_user));
+                    if(accounts.Length > 0)
+                    {
+                        return Ok(accounts);
+                    }
+                    else
+                    {
+                        return BadRequest("There aren't transactions for the account.");
+                    }
 
-                return Ok(accounts);
+                    
+                }
             }
             catch (Exception)
             {
@@ -44,9 +60,24 @@ namespace ATM_API.Controllers
         {
             try
             {
-                var Id_user = repo.GetUserID(username, password);
-                var details = repo.GetAccountDetails(Int16.Parse(Id_user.ToString()));
-                return Ok(details);
+                if (!repo.UserExist(username, password))
+                {
+                    return BadRequest("Wrong username or password, please try again.");
+                }
+                else
+                {
+                    var Id_user = repo.GetUserID(username, password);
+                    var details = repo.GetAccountDetails(Int16.Parse(Id_user.ToString()));
+                    if (details.Length >= 0)
+                    {
+                        return Ok(details);
+                    }
+                    else
+                    {
+                        return BadRequest("There aren't account information for the user.");
+                    }
+                }
+                
             }
             catch (Exception)
             {

@@ -12,7 +12,7 @@ namespace ATM_API.Controllers
 {
 
     [EnableCors("AllOrigin")]
-    [Route("api/Users/{username}/{password}")]
+    [Route("api/Users/{username}/{password}/Accounts/TransactionHistory/")]
     public class TransactionHistory : Controller
     {
         private IATM_Repository repo;
@@ -22,20 +22,28 @@ namespace ATM_API.Controllers
             repo = _repo;
         }
 
-        [HttpGet("/TransactionHistory/{Id_Account}/{StartDate}/{EndDate}")]
-        public IActionResult GetTransactionHistory(string username, string password, string Id_Account,DateTime StartDate, DateTime EndDate)
+        [HttpGet("{Id_Account}/{StartDate}/{EndDate}")]
+        public IActionResult GetTransactionHistory(string username, string password, string Id_Account, DateTime StartDate, DateTime EndDate)
         {
 
             try
             {
+                 
                 if (!repo.UserExist(username, password))
                 {
-                    return Ok(false);
+                    return BadRequest("Wrong username or password, please try again");
                 }
                 else
                 {
                     var account = repo.GetTransactionHistory(Int16.Parse(Id_Account), StartDate, EndDate);
-                    return Ok(account);
+                    if (account.Length > 0)
+                    {
+                        return Ok(account);
+                    }
+                    else
+                    {
+                        return BadRequest("There aren't accounts for the user.");
+                    }
                 }
                 
             }
@@ -45,6 +53,23 @@ namespace ATM_API.Controllers
                 throw;
             }
         }
+
+        [HttpPost("/{username}/{password}/Dispense/{Id_Account}/{Amount}")]
+        public async Task<IActionResult>  Dispense(string username, string password, string Id_Account, double amount)
+        {
+            try
+            {
+                
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+
+            return BadRequest("Failed to save");
+        
+    }   
+
 
 
         

@@ -129,7 +129,7 @@ namespace DataAccessLayer.Service
 
             var transactions = from t in _context.TransactionHistory
                                where t.Id_Account == id_account &&
-                               (start <= t.TransactionDate && t.TransactionDate >= end)
+                               (start <= t.TransactionDate && t.TransactionDate <= end)
                                select t;
             return transactions.ToArray();
         }

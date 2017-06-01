@@ -29,7 +29,7 @@ namespace ATM_API.Controllers
             {
                 if (!repo.UserExist(username, password))
                 {
-                    return Ok(false);
+                    return BadRequest("Wrong username or password , please try again.");
                 }
                 else
                 {
