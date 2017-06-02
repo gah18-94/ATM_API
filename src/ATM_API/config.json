@@ -1,5 +1,5 @@
 ﻿{
   "ConnectionStrings": {
-    "ATMConnection": "Server=W5123363\\SQLEXPRESS;Database=ATM2;Trusted_Connection=true;MultipleActiveResultSets=true;"
+    "ATMConnection": "Server=W5123363\\SQLEXPRESS;Database=ATM;Trusted_Connection=true;MultipleActiveResultSets=true;"
   }
 }
