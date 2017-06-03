@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using ATM_API.Models;
+using System.Data.SqlTypes;
+using Microsoft.EntityFrameworkCore;
 
 namespace DataAccessLayer.Service
 {
@@ -132,6 +134,63 @@ namespace DataAccessLayer.Service
                                (start <= t.TransactionDate && t.TransactionDate <= end)
                                select t;
             return transactions.ToArray();
+        }
+
+        public bool AvailableMoney(int id_account, decimal amount)
+        {
+            try
+            {
+                SqlDecimal AccountMoney = _context.AccountDetails.Where(a => a.Id_Account==id_account).FirstOrDefault().TotalAmount;
+                if (AccountMoney.Value > amount)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        public bool DispenseMoney(int id_account, decimal amount,string description)
+        {
+            try
+            {
+                _context.Database.BeginTransaction();
+
+                SqlDecimal account = _context.AccountDetails.Where(a => a.Id_Account == id_account).FirstOrDefault().TotalAmount;
+                account = account - amount;
+                _context.SaveChanges();
+                if (_context.AccountDetails.Where(a => a.Id_Account == id_account).FirstOrDefault().TotalAmount == account) {
+
+                    TransactionHistoryModel hist = new TransactionHistoryModel { };
+                    hist.Description = description;
+                    hist.TransactionAmount = amount;
+                    hist.Id_Account = id_account;
+                    hist.TransactionDate = DateTime.Today;
+                    hist.TransactionType = "ATM transaction.";
+                    _context.TransactionHistory.Add(hist);
+                    _context.SaveChanges();
+                    _context.Database.CommitTransaction();
+                    return true;
+                }
+                else
+                {
+                    _context.Database.RollbackTransaction();
+                    return false;
+                }
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
     }
 }

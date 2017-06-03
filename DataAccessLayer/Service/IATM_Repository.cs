@@ -14,5 +14,7 @@ namespace DataAccessLayer.Service
         string GetUserID(string username, string password);
         AccountDetailsModel[] GetAccountDetails(int id_user);
         TransactionHistoryModel[] GetTransactionHistory(int id_account, DateTime start, DateTime end);
+        bool AvailableMoney(int id_account, decimal amount);
+        bool DispenseMoney(int id_account, decimal amount, string description);
     }
 }

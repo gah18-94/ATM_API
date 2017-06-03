@@ -14,7 +14,8 @@
     "Microsoft.Extensions.Configuration.Json": "1.0.0",
     "Microsoft.EntityFrameworkCore.SqlServer": "1.1.2",
     "DataAccessLayer": "1.0.0-*",
-    "Microsoft.AspNetCore.Cors": "1.1.2"
+    "Microsoft.AspNetCore.Cors": "1.1.2",
+    "log4net": "2.0.8"
   },
 
   "tools": {

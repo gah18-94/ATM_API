@@ -15,6 +15,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Cors.Internal;
+using log4net;
+using Microsoft.DotNet.PlatformAbstractions;
 
 namespace ATM_API
 {
@@ -24,7 +26,7 @@ namespace ATM_API
         private IHostingEnvironment _env;
         public static IConfigurationRoot _config;
 
-        public Startup(IHostingEnvironment env)
+        public Startup(IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
             _env = env;
 

@@ -4,6 +4,7 @@ using DataAccessLayer.Service;
 using Microsoft.AspNetCore.Cors;
 using System.Net;
 using Microsoft.Extensions.Configuration;
+using log4net;
 
 
 // For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860

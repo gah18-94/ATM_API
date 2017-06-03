@@ -12,7 +12,7 @@ namespace ATM_API.Models
         public int Id_Transaction { get; set; }
         public string TransactionType { get; set; }
         public DateTime TransactionDate { get; set; }
-        public double TransactionAmount { get; set; }
+        public decimal TransactionAmount { get; set; }
         public string Description { get; set; }
         public int Id_Account { get; set; }
     }
