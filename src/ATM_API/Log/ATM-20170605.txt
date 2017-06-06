@@ -1,0 +1,34 @@
+2017-06-05T17:59:45.5608774-06:00 0HL5CDROFUVSN [INF] Request starting HTTP/1.1 GET http://localhost:53153/   (e5be5b71)
+2017-06-05T17:59:45.5608774-06:00 0HL5CDROFUVSO [INF] Request starting HTTP/1.1 DEBUG http://localhost:53153/  0 (e5be5b71)
+2017-06-05T17:59:45.7648774-06:00 0HL5CDROFUVSO [INF] Request finished in 214.2703ms 200  (15c52c40)
+2017-06-05T17:59:46.1748774-06:00 0HL5CDROFUVSN [INF] Request finished in 657.444ms 404 text/plain (15c52c40)
+2017-06-05T17:59:46.4768774-06:00 0HL5CDROFUVSP [INF] Request starting HTTP/1.1 GET http://localhost:53153/favicon.ico   (e5be5b71)
+2017-06-05T17:59:46.4908774-06:00 0HL5CDROFUVSP [INF] Request finished in 14.3255ms 404 text/plain (15c52c40)
+2017-06-05T18:00:45.3238774-06:00 0HL5CDROFUVSQ [INF] Request starting HTTP/1.1 GET http://localhost:53153/api/users/galpizar/123456   (e5be5b71)
+2017-06-05T18:00:46.9328774-06:00 0HL5CDROFUVSQ [INF] Executed DbCommand (100ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0 (6438bdd5)
+2017-06-05T18:00:47.1058774-06:00 0HL5CDROFUVSQ [INF] Executing action method "ATM_API.Controllers.UserController.ValidateUser (ATM_API)" with arguments (["galpizar", "123456"]) - ModelState is Valid (ba7f4ac2)
+2017-06-05T18:00:48.9368774-06:00 0HL5CDROFUVSQ [INF] Executed DbCommand (221ms) [Parameters=[@__username_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE [u].[Username] = @__username_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-06-05T18:00:48.9758774-06:00 0HL5CDROFUVSQ [INF] Executed DbCommand (2ms) [Parameters=[@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE ([u].[Username] = @__username_0) AND ([u].[Password] = @__password_1))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-06-05T18:00:49.0578774-06:00 0HL5CDROFUVSQ [INF] Executed DbCommand (11ms) [Parameters=[@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id_User], [u].[FullName], [u].[Password], [u].[Username]
+FROM [Users] AS [u]
+WHERE ([u].[Username] = @__username_0) AND ([u].[Password] = @__password_1) (6438bdd5)
+2017-06-05T18:00:52.0128774-06:00 0HL5CDROFUVSQ [INF] Log In for user:galpizar with password :123456 (6d1e4ceb)
+2017-06-05T18:00:53.8328774-06:00 0HL5CDROFUVSQ [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-06-05T18:00:56.0338774-06:00 0HL5CDROFUVSQ [INF] Executed action "ATM_API.Controllers.UserController.ValidateUser (ATM_API)" in 10600.3804ms (afa2e885)
+2017-06-05T18:00:56.0598774-06:00 0HL5CDROFUVSQ [INF] Request finished in 10735.4479ms 200 application/json; charset=utf-8 (15c52c40)

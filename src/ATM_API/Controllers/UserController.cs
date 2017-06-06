@@ -4,7 +4,8 @@ using DataAccessLayer.Service;
 using Microsoft.AspNetCore.Cors;
 using System.Net;
 using Microsoft.Extensions.Configuration;
-using log4net;
+using Microsoft.Extensions.Logging;
+using System;
 
 
 // For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
@@ -15,11 +16,13 @@ namespace ATM_API.Controllers
     [Route("api/Users")]
     public class UserController : Controller
     {
-        private IATM_Repository repo ;
+        private IATM_Repository repo;
+        private ILogger logger;
 
-        public UserController(IATM_Repository _repo)
+        public UserController(IATM_Repository _repo, ILogger <UserController> _logger)
         {
             repo = _repo;
+            logger = _logger;
         }
         
         [HttpGet("{username}/{password}")]
@@ -35,13 +38,14 @@ namespace ATM_API.Controllers
                 else
                 {
                     var user = repo.GetDataUser(username, password);
+                    logger.LogInformation($"Log In for user:{username} with password :{password}");
                     return Ok(user);
                 }
             }
-            catch (System.Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                logger.LogError($"Validate User method error:{ex.Message}");
+                return BadRequest("Error");
             }
             
         

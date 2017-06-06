@@ -15,7 +15,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Cors.Internal;
-using log4net;
 using Microsoft.DotNet.PlatformAbstractions;
 
 namespace ATM_API
@@ -26,7 +25,7 @@ namespace ATM_API
         private IHostingEnvironment _env;
         public static IConfigurationRoot _config;
 
-        public Startup(IHostingEnvironment env, ILoggerFactory loggerFactory)
+        public Startup(IHostingEnvironment env)
         {
             _env = env;
 
@@ -37,6 +36,8 @@ namespace ATM_API
 
             _config = builder.Build();
             
+
+
         }
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit http://go.microsoft.com/fwlink/?LinkID=398940
@@ -53,6 +54,7 @@ namespace ATM_API
 
             services.AddDbContext<ATM_context>(options => options.UseSqlServer(connection));
             services.AddScoped<IATM_Repository, ATM_Repository>();
+            services.AddLogging();
             services.AddMvc();
             services.AddCors(o => o.AddPolicy("AllOrigin", builder => {
                 builder.AllowAnyOrigin()
@@ -67,11 +69,18 @@ namespace ATM_API
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
+            loggerFactory.AddFile("Log/ATM-{Date}.txt");
             loggerFactory.AddConsole();
 
             if (env.IsDevelopment() || env.IsStaging())
             {
                 app.UseDeveloperExceptionPage();
+                loggerFactory.AddDebug(LogLevel.Information);
+                
+            }
+            else
+            {
+                loggerFactory.AddDebug(LogLevel.Error);
             }
             
             app.UseStatusCodePages();
