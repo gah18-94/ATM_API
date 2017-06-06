@@ -8,8 +8,8 @@
 -debug:full
 -nostdlib
 -nologo
-"C:\Users\c18879a\documents\visual studio 2015\Projects\ATM_API\DataAccessLayer\obj\Debug\netstandard1.6\dotnet-compile.assemblyinfo.cs"
--out:"C:\Users\c18879a\documents\visual studio 2015\Projects\ATM_API\DataAccessLayer\bin\Debug\netstandard1.6\DataAccessLayer.dll"
+"C:\Users\c18879a\Documents\Visual Studio 2015\Projects\ATM_API\DataAccessLayer\obj\Debug\netstandard1.6\dotnet-compile.assemblyinfo.cs"
+-out:"C:\Users\c18879a\Documents\Visual Studio 2015\Projects\ATM_API\DataAccessLayer\bin\Debug\netstandard1.6\DataAccessLayer.dll"
 -r:"C:\Users\c18879a\.nuget\packages\Microsoft.AspNetCore.Hosting.Abstractions\1.1.1\lib\netstandard1.3\Microsoft.AspNetCore.Hosting.Abstractions.dll"
 -r:"C:\Users\c18879a\.nuget\packages\Microsoft.AspNetCore.Hosting.Server.Abstractions\1.1.1\lib\netstandard1.3\Microsoft.AspNetCore.Hosting.Server.Abstractions.dll"
 -r:"C:\Users\c18879a\.nuget\packages\Microsoft.AspNetCore.Http.Abstractions\1.1.1\lib\netstandard1.3\Microsoft.AspNetCore.Http.Abstractions.dll"
@@ -93,10 +93,10 @@
 -r:"C:\Users\c18879a\.nuget\packages\System.Threading.Timer\4.3.0\ref\netstandard1.2\System.Threading.Timer.dll"
 -r:"C:\Users\c18879a\.nuget\packages\System.Xml.ReaderWriter\4.3.0\ref\netstandard1.3\System.Xml.ReaderWriter.dll"
 -r:"C:\Users\c18879a\.nuget\packages\System.Xml.XDocument\4.0.11\ref\netstandard1.3\System.Xml.XDocument.dll"
-"C:\Users\c18879a\documents\visual studio 2015\Projects\ATM_API\DataAccessLayer\Entitties\AccountDetailsModel.cs"
-"C:\Users\c18879a\documents\visual studio 2015\Projects\ATM_API\DataAccessLayer\Entitties\ATM_context.cs"
-"C:\Users\c18879a\documents\visual studio 2015\Projects\ATM_API\DataAccessLayer\Entitties\TransactionHistoryModel.cs"
-"C:\Users\c18879a\documents\visual studio 2015\Projects\ATM_API\DataAccessLayer\Entitties\UserModel.cs"
-"C:\Users\c18879a\documents\visual studio 2015\Projects\ATM_API\DataAccessLayer\Properties\AssemblyInfo.cs"
-"C:\Users\c18879a\documents\visual studio 2015\Projects\ATM_API\DataAccessLayer\Service\ATM_Repository.cs"
-"C:\Users\c18879a\documents\visual studio 2015\Projects\ATM_API\DataAccessLayer\Service\IATM_Repository.cs"
+"C:\Users\c18879a\Documents\Visual Studio 2015\Projects\ATM_API\DataAccessLayer\Entitties\AccountDetailsModel.cs"
+"C:\Users\c18879a\Documents\Visual Studio 2015\Projects\ATM_API\DataAccessLayer\Entitties\ATM_context.cs"
+"C:\Users\c18879a\Documents\Visual Studio 2015\Projects\ATM_API\DataAccessLayer\Entitties\TransactionHistoryModel.cs"
+"C:\Users\c18879a\Documents\Visual Studio 2015\Projects\ATM_API\DataAccessLayer\Entitties\UserModel.cs"
+"C:\Users\c18879a\Documents\Visual Studio 2015\Projects\ATM_API\DataAccessLayer\Properties\AssemblyInfo.cs"
+"C:\Users\c18879a\Documents\Visual Studio 2015\Projects\ATM_API\DataAccessLayer\Service\ATM_Repository.cs"
+"C:\Users\c18879a\Documents\Visual Studio 2015\Projects\ATM_API\DataAccessLayer\Service\IATM_Repository.cs"

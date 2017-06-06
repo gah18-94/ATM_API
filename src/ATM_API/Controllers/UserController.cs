@@ -33,6 +33,7 @@ namespace ATM_API.Controllers
             {
                 if (!repo.UserExist(username, password))
                 {
+                    logger.LogInformation($"Attemp to Log In for user:{username} with password :{password}");
                     return BadRequest("Wrong username or password , please try again.");
                 }
                 else
@@ -44,7 +45,7 @@ namespace ATM_API.Controllers
             }
             catch (Exception ex)
             {
-                logger.LogError($"Validate User method error:{ex.Message}");
+                logger.LogError($"Validate User method error:_{ex.Message}_");
                 return BadRequest("Error");
             }
             
