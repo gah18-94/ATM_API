@@ -70,18 +70,18 @@ namespace ATM_API.Controllers
                     var response = repo.DispenseMoney(Id_Account, Amount, Description);
                     if (response)
                     {
-                        logger.LogInformation($"Dispense money OK with Id_Account:{Id_Account}, usr:{username}, pwd:{password},am:{Amount},desc:{Description}");
-                        return Ok("Transaction succesfully added.");
+                        logger.LogInformation($"Dispense money OK with Id_Account:{Id_Account}, usr:{username},am:{Amount},desc:{Description}");
+                        return Ok("Transaction succesfully.");
                     }
                     else
                     {
-                        logger.LogInformation($"Dispense money Failed with Id_Account:{Id_Account}, usr:{username}, pwd:{password},am:{Amount},desc:{Description}");
+                        logger.LogInformation($"Dispense money Failed with Id_Account:{Id_Account}, usr:{username}, am:{Amount},desc:{Description}");
                         return BadRequest("Transaction failed.");
                     }
                 }
                 else
                 {
-                    logger.LogInformation($"There aren't enough money on Dispense money with Id_Account:{Id_Account}, usr:{username}, pwd:{password},am:{Amount},desc:{Description}");
+                    logger.LogInformation($"There aren't enough money on Dispense money with Id_Account:{Id_Account}, usr:{username}, am:{Amount},desc:{Description}");
                     return BadRequest("There aren't enough money in the account.");
                 }
 

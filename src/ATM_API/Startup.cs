@@ -44,12 +44,6 @@ namespace ATM_API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSingleton(_config);
-           /* services.AddScoped<IATM_Repository, ATM_Repository>();/*
-            var connectionString = _config["connectionStrings:ATMConnection"];
-            services.AddDbContext<ATM_context>(o => o.UseSqlServer(connectionString));
-            /*services.AddDbContext<ATM_context>(options =>
-            options.UseSqlServer(_config.GetConnectionString("ATMConnection")));
-            */
             var connection = Startup._config["connectionStrings:ATMConnection"];
 
             services.AddDbContext<ATM_context>(options => options.UseSqlServer(connection));
@@ -85,11 +79,7 @@ namespace ATM_API
             
             app.UseStatusCodePages();
             app.UseMvc();
-
-            /* app.Run(async (context) =>
-             {
-                 await context.Response.WriteAsync("Hello World!");
-             });*/
+            
         }
     }
 }

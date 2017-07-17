@@ -1,0 +1,1220 @@
+2017-07-12T10:52:18.2185330-06:00 0HL68M7MJ7047 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Users/galpizar/123456/Accounts   (e5be5b71)
+2017-07-12T10:52:18.3185330-06:00 0HL68M7MJ7047 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0 (6438bdd5)
+2017-07-12T10:52:18.3215330-06:00 0HL68M7MJ7047 [INF] Executing action method "ATM_API.Controllers.AccountDetailsController.GetAccountsDropDown (ATM_API)" with arguments (["galpizar", "123456"]) - ModelState is Valid (ba7f4ac2)
+2017-07-12T10:52:18.3255330-06:00 0HL68M7MJ7047 [INF] Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE [u].[Username] = @__username_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-07-12T10:52:18.3315330-06:00 0HL68M7MJ7047 [INF] Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE ([u].[Username] = @__username_0) AND ([u].[Password] = @__password_1))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-07-12T10:52:18.3355330-06:00 0HL68M7MJ7047 [INF] Executed DbCommand (1ms) [Parameters=[@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id_User], [u].[FullName], [u].[Password], [u].[Username]
+FROM [Users] AS [u]
+WHERE ([u].[Username] = @__username_0) AND ([u].[Password] = @__password_1) (6438bdd5)
+2017-07-12T10:52:18.4195330-06:00 0HL68M7MJ7047 [INF] Executed DbCommand (3ms) [Parameters=[@__id_user_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id_Account], [a].[Description]
+FROM [AccountDetails] AS [a]
+WHERE [a].[Id_User] = @__id_user_0 (6438bdd5)
+2017-07-12T10:52:18.4215330-06:00 0HL68M7MJ7047 [INF] GetAccountsDropDown OK for the user:galpizar with password :123456 (4a918317)
+2017-07-12T10:52:18.4215330-06:00 0HL68M7MJ7047 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-07-12T10:52:18.4425330-06:00 0HL68M7MJ7047 [INF] Executed action "ATM_API.Controllers.AccountDetailsController.GetAccountsDropDown (ATM_API)" in 166.6365ms (afa2e885)
+2017-07-12T10:52:18.4465330-06:00 0HL68M7MJ7047 [INF] Request finished in 227.1569ms 200 application/json; charset=utf-8 (15c52c40)
+2017-07-12T11:42:42.5775330-06:00 0HL68M7MJ7048 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Users/galpizar/123456   (e5be5b71)
+2017-07-12T11:42:42.5935330-06:00 0HL68M7MJ7048 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0 (6438bdd5)
+2017-07-12T11:42:42.5945330-06:00 0HL68M7MJ7048 [INF] Executing action method "ATM_API.Controllers.UserController.ValidateUser (ATM_API)" with arguments (["galpizar", "123456"]) - ModelState is Valid (ba7f4ac2)
+2017-07-12T11:42:42.5965330-06:00 0HL68M7MJ7048 [INF] Executed DbCommand (2ms) [Parameters=[@__username_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE [u].[Username] = @__username_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-07-12T11:42:42.6015330-06:00 0HL68M7MJ7048 [INF] Executed DbCommand (2ms) [Parameters=[@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE ([u].[Username] = @__username_0) AND ([u].[Password] = @__password_1))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-07-12T11:42:42.6035330-06:00 0HL68M7MJ7048 [INF] Executed DbCommand (1ms) [Parameters=[@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id_User], [u].[FullName], [u].[Password], [u].[Username]
+FROM [Users] AS [u]
+WHERE ([u].[Username] = @__username_0) AND ([u].[Password] = @__password_1) (6438bdd5)
+2017-07-12T11:42:42.6045330-06:00 0HL68M7MJ7048 [INF] Log In for user:galpizar with password :123456 (6d1e4ceb)
+2017-07-12T11:42:42.6055330-06:00 0HL68M7MJ7048 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-07-12T11:42:42.6055330-06:00 0HL68M7MJ7048 [INF] Executed action "ATM_API.Controllers.UserController.ValidateUser (ATM_API)" in 27.1638ms (afa2e885)
+2017-07-12T11:42:42.6065330-06:00 0HL68M7MJ7048 [INF] Request finished in 29.3572ms 200 application/json; charset=utf-8 (15c52c40)
+2017-07-12T11:43:54.8845330-06:00 0HL68M7MJ7049 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Users/galpizar/123456   (e5be5b71)
+2017-07-12T11:43:54.8895330-06:00 0HL68M7MJ7049 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0 (6438bdd5)
+2017-07-12T11:43:54.8915330-06:00 0HL68M7MJ7049 [INF] Executing action method "ATM_API.Controllers.UserController.ValidateUser (ATM_API)" with arguments (["galpizar", "123456"]) - ModelState is Valid (ba7f4ac2)
+2017-07-12T11:43:54.8945330-06:00 0HL68M7MJ7049 [INF] Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE [u].[Username] = @__username_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-07-12T11:43:54.8955330-06:00 0HL68M7MJ7049 [INF] Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE ([u].[Username] = @__username_0) AND ([u].[Password] = @__password_1))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-07-12T11:43:54.9005330-06:00 0HL68M7MJ7049 [INF] Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id_User], [u].[FullName], [u].[Password], [u].[Username]
+FROM [Users] AS [u]
+WHERE ([u].[Username] = @__username_0) AND ([u].[Password] = @__password_1) (6438bdd5)
+2017-07-12T11:43:54.9025330-06:00 0HL68M7MJ7049 [INF] Log In for user:galpizar with password :123456 (6d1e4ceb)
+2017-07-12T11:43:54.9035330-06:00 0HL68M7MJ7049 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-07-12T11:43:54.9055330-06:00 0HL68M7MJ7049 [INF] Executed action "ATM_API.Controllers.UserController.ValidateUser (ATM_API)" in 18.1644ms (afa2e885)
+2017-07-12T11:43:54.9075330-06:00 0HL68M7MJ7049 [INF] Request finished in 22.3339ms 200 application/json; charset=utf-8 (15c52c40)
+2017-07-12T11:53:29.5034057-06:00 0HL68M7MJ704A [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Users/galpizar/123456   (e5be5b71)
+2017-07-12T11:53:29.5114065-06:00 0HL68M7MJ704A [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0 (6438bdd5)
+2017-07-12T11:53:29.5114065-06:00 0HL68M7MJ704A [INF] Executing action method "ATM_API.Controllers.UserController.ValidateUser (ATM_API)" with arguments (["galpizar", "123456"]) - ModelState is Valid (ba7f4ac2)
+2017-07-12T11:53:29.5134067-06:00 0HL68M7MJ704A [INF] Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE [u].[Username] = @__username_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-07-12T11:53:29.5144068-06:00 0HL68M7MJ704A [INF] Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE ([u].[Username] = @__username_0) AND ([u].[Password] = @__password_1))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-07-12T11:53:29.5154069-06:00 0HL68M7MJ704A [INF] Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id_User], [u].[FullName], [u].[Password], [u].[Username]
+FROM [Users] AS [u]
+WHERE ([u].[Username] = @__username_0) AND ([u].[Password] = @__password_1) (6438bdd5)
+2017-07-12T11:53:29.5164070-06:00 0HL68M7MJ704A [INF] Log In for user:galpizar with password :123456 (6d1e4ceb)
+2017-07-12T11:53:29.5164070-06:00 0HL68M7MJ704A [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-07-12T11:53:29.5174071-06:00 0HL68M7MJ704A [INF] Executed action "ATM_API.Controllers.UserController.ValidateUser (ATM_API)" in 11.9301ms (afa2e885)
+2017-07-12T11:53:29.5174071-06:00 0HL68M7MJ704A [INF] Request finished in 14.0072ms 200 application/json; charset=utf-8 (15c52c40)
+2017-07-12T11:54:47.4872033-06:00 0HL68M7MJ704B [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Users/galpizar/123456   (e5be5b71)
+2017-07-12T11:54:47.4912037-06:00 0HL68M7MJ704B [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0 (6438bdd5)
+2017-07-12T11:54:47.4932039-06:00 0HL68M7MJ704B [INF] Executing action method "ATM_API.Controllers.UserController.ValidateUser (ATM_API)" with arguments (["galpizar", "123456"]) - ModelState is Valid (ba7f4ac2)
+2017-07-12T11:54:47.4952041-06:00 0HL68M7MJ704B [INF] Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE [u].[Username] = @__username_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-07-12T11:54:47.4972043-06:00 0HL68M7MJ704B [INF] Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE ([u].[Username] = @__username_0) AND ([u].[Password] = @__password_1))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-07-12T11:54:47.4982044-06:00 0HL68M7MJ704B [INF] Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id_User], [u].[FullName], [u].[Password], [u].[Username]
+FROM [Users] AS [u]
+WHERE ([u].[Username] = @__username_0) AND ([u].[Password] = @__password_1) (6438bdd5)
+2017-07-12T11:54:47.4992045-06:00 0HL68M7MJ704B [INF] Log In for user:galpizar with password :123456 (6d1e4ceb)
+2017-07-12T11:54:47.5012047-06:00 0HL68M7MJ704B [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-07-12T11:54:47.5012047-06:00 0HL68M7MJ704B [INF] Executed action "ATM_API.Controllers.UserController.ValidateUser (ATM_API)" in 12.4742ms (afa2e885)
+2017-07-12T11:54:47.5032049-06:00 0HL68M7MJ704B [INF] Request finished in 16.0559ms 200 application/json; charset=utf-8 (15c52c40)
+2017-07-12T12:50:47.0065330-06:00 0HL68M7MJ704C [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Users/galpizar/123456   (e5be5b71)
+2017-07-12T12:50:47.0125330-06:00 0HL68M7MJ704C [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0 (6438bdd5)
+2017-07-12T12:50:47.0135330-06:00 0HL68M7MJ704C [INF] Executing action method "ATM_API.Controllers.UserController.ValidateUser (ATM_API)" with arguments (["galpizar", "123456"]) - ModelState is Valid (ba7f4ac2)
+2017-07-12T12:50:47.0145330-06:00 0HL68M7MJ704C [INF] Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE [u].[Username] = @__username_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-07-12T12:50:47.0165330-06:00 0HL68M7MJ704C [INF] Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE ([u].[Username] = @__username_0) AND ([u].[Password] = @__password_1))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-07-12T12:50:47.0175330-06:00 0HL68M7MJ704C [INF] Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id_User], [u].[FullName], [u].[Password], [u].[Username]
+FROM [Users] AS [u]
+WHERE ([u].[Username] = @__username_0) AND ([u].[Password] = @__password_1) (6438bdd5)
+2017-07-12T12:50:47.0185330-06:00 0HL68M7MJ704C [INF] Log In for user:galpizar with password :123456 (6d1e4ceb)
+2017-07-12T12:50:47.0185330-06:00 0HL68M7MJ704C [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-07-12T12:50:47.0195330-06:00 0HL68M7MJ704C [INF] Executed action "ATM_API.Controllers.UserController.ValidateUser (ATM_API)" in 11.2216ms (afa2e885)
+2017-07-12T12:50:47.0205330-06:00 0HL68M7MJ704C [INF] Request finished in 13.6677ms 200 application/json; charset=utf-8 (15c52c40)
+2017-07-12T12:50:49.3365330-06:00 0HL68M7MJ704D [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Users/galpizar/123456/Accounts   (e5be5b71)
+2017-07-12T12:50:49.3415330-06:00 0HL68M7MJ704D [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0 (6438bdd5)
+2017-07-12T12:50:49.3495330-06:00 0HL68M7MJ704D [INF] Executing action method "ATM_API.Controllers.AccountDetailsController.GetAccountsDropDown (ATM_API)" with arguments (["galpizar", "123456"]) - ModelState is Valid (ba7f4ac2)
+2017-07-12T12:50:49.3655330-06:00 0HL68M7MJ704D [INF] Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE [u].[Username] = @__username_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-07-12T12:50:49.3685330-06:00 0HL68M7MJ704D [INF] Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE ([u].[Username] = @__username_0) AND ([u].[Password] = @__password_1))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-07-12T12:50:49.3765330-06:00 0HL68M7MJ704D [INF] Executed DbCommand (1ms) [Parameters=[@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id_User], [u].[FullName], [u].[Password], [u].[Username]
+FROM [Users] AS [u]
+WHERE ([u].[Username] = @__username_0) AND ([u].[Password] = @__password_1) (6438bdd5)
+2017-07-12T12:50:49.3825330-06:00 0HL68M7MJ704D [INF] Executed DbCommand (0ms) [Parameters=[@__id_user_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id_Account], [a].[Description]
+FROM [AccountDetails] AS [a]
+WHERE [a].[Id_User] = @__id_user_0 (6438bdd5)
+2017-07-12T12:50:49.3825330-06:00 0HL68M7MJ704D [INF] GetAccountsDropDown OK for the user:galpizar with password :123456 (4a918317)
+2017-07-12T12:50:49.3835330-06:00 0HL68M7MJ704D [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-07-12T12:50:49.3835330-06:00 0HL68M7MJ704D [INF] Executed action "ATM_API.Controllers.AccountDetailsController.GetAccountsDropDown (ATM_API)" in 45.0843ms (afa2e885)
+2017-07-12T12:50:49.3845330-06:00 0HL68M7MJ704D [INF] Request finished in 48.8264ms 200 application/json; charset=utf-8 (15c52c40)
+2017-07-12T12:51:59.9655330-06:00 0HL68M7MJ704E [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Users/galpizar/123456/Accounts/TransactionHistory/1/2017-03-01%2000:00/2017-07-26%2000:00   (e5be5b71)
+2017-07-12T12:51:59.9775330-06:00 0HL68M7MJ704E [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0 (6438bdd5)
+2017-07-12T12:51:59.9885330-06:00 0HL68M7MJ704E [INF] Executing action method "ATM_API.Controllers.TransactionHistory.GetTransactionHistory (ATM_API)" with arguments (["galpizar", "123456", "1", "3/1/2017 12:00:00 AM", "7/26/2017 12:00:00 AM"]) - ModelState is Valid (ba7f4ac2)
+2017-07-12T12:51:59.9995330-06:00 0HL68M7MJ704E [INF] Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE [u].[Username] = @__username_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-07-12T12:52:00.0005330-06:00 0HL68M7MJ704E [INF] Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE ([u].[Username] = @__username_0) AND ([u].[Password] = @__password_1))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-07-12T12:52:00.0265330-06:00 0HL68M7MJ704E [INF] Executed DbCommand (11ms) [Parameters=[@__id_account_0='?', @__start_1='?', @__end_2='?'], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id_Transaction], [t].[Description], [t].[Id_Account], [t].[TransactionAmount], [t].[TransactionDate], [t].[TransactionType]
+FROM [TransactionHistory] AS [t]
+WHERE ([t].[Id_Account] = @__id_account_0) AND ((@__start_1 <= [t].[TransactionDate]) AND ([t].[TransactionDate] <= @__end_2)) (6438bdd5)
+2017-07-12T12:52:00.0395330-06:00 0HL68M7MJ704E [INF] GetTransactionHistory OK with Id_Account:1, usr:galpizar, pwd:123456,sd:3/1/2017 12:00:00 AM,ed:7/26/2017 12:00:00 AM (7f7f12b2)
+2017-07-12T12:52:00.0405330-06:00 0HL68M7MJ704E [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-07-12T12:52:00.0535330-06:00 0HL68M7MJ704E [INF] Executed action "ATM_API.Controllers.TransactionHistory.GetTransactionHistory (ATM_API)" in 79.0884ms (afa2e885)
+2017-07-12T12:52:00.0555330-06:00 0HL68M7MJ704E [INF] Request finished in 89.8316ms 200 application/json; charset=utf-8 (15c52c40)
+2017-07-12T15:43:46.6025330-06:00 0HL68M7MJ704F [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Users/galpizar/123456   (e5be5b71)
+2017-07-12T15:43:46.6095330-06:00 0HL68M7MJ704F [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0 (6438bdd5)
+2017-07-12T15:43:46.6105330-06:00 0HL68M7MJ704F [INF] Executing action method "ATM_API.Controllers.UserController.ValidateUser (ATM_API)" with arguments (["galpizar", "123456"]) - ModelState is Valid (ba7f4ac2)
+2017-07-12T15:43:46.6105330-06:00 0HL68M7MJ704F [INF] Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE [u].[Username] = @__username_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-07-12T15:43:46.6115330-06:00 0HL68M7MJ704F [INF] Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE ([u].[Username] = @__username_0) AND ([u].[Password] = @__password_1))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-07-12T15:43:46.6125330-06:00 0HL68M7MJ704F [INF] Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id_User], [u].[FullName], [u].[Password], [u].[Username]
+FROM [Users] AS [u]
+WHERE ([u].[Username] = @__username_0) AND ([u].[Password] = @__password_1) (6438bdd5)
+2017-07-12T15:43:46.6135330-06:00 0HL68M7MJ704F [INF] Log In for user:galpizar with password :123456 (6d1e4ceb)
+2017-07-12T15:43:46.6135330-06:00 0HL68M7MJ704F [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-07-12T15:43:46.6135330-06:00 0HL68M7MJ704F [INF] Executed action "ATM_API.Controllers.UserController.ValidateUser (ATM_API)" in 10.6006ms (afa2e885)
+2017-07-12T15:43:46.6145330-06:00 0HL68M7MJ704F [INF] Request finished in 11.8831ms 200 application/json; charset=utf-8 (15c52c40)
+2017-07-12T15:43:54.9145330-06:00 0HL68M7MJ704G [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Users/galpizar/123456/Accounts   (e5be5b71)
+2017-07-12T15:43:54.9345330-06:00 0HL68M7MJ704G [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0 (6438bdd5)
+2017-07-12T15:43:54.9355330-06:00 0HL68M7MJ704G [INF] Executing action method "ATM_API.Controllers.AccountDetailsController.GetAccountsDropDown (ATM_API)" with arguments (["galpizar", "123456"]) - ModelState is Valid (ba7f4ac2)
+2017-07-12T15:43:54.9375330-06:00 0HL68M7MJ704G [INF] Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE [u].[Username] = @__username_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-07-12T15:43:54.9395330-06:00 0HL68M7MJ704G [INF] Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE ([u].[Username] = @__username_0) AND ([u].[Password] = @__password_1))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-07-12T15:43:54.9405330-06:00 0HL68M7MJ704G [INF] Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id_User], [u].[FullName], [u].[Password], [u].[Username]
+FROM [Users] AS [u]
+WHERE ([u].[Username] = @__username_0) AND ([u].[Password] = @__password_1) (6438bdd5)
+2017-07-12T15:43:54.9415330-06:00 0HL68M7MJ704G [INF] Executed DbCommand (0ms) [Parameters=[@__id_user_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id_Account], [a].[Description]
+FROM [AccountDetails] AS [a]
+WHERE [a].[Id_User] = @__id_user_0 (6438bdd5)
+2017-07-12T15:43:54.9475330-06:00 0HL68M7MJ704G [INF] GetAccountsDropDown OK for the user:galpizar with password :123456 (4a918317)
+2017-07-12T15:43:54.9495330-06:00 0HL68M7MJ704G [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-07-12T15:43:54.9515330-06:00 0HL68M7MJ704G [INF] Executed action "ATM_API.Controllers.AccountDetailsController.GetAccountsDropDown (ATM_API)" in 27.488ms (afa2e885)
+2017-07-12T15:43:54.9545330-06:00 0HL68M7MJ704G [INF] Request finished in 40.0075ms 200 application/json; charset=utf-8 (15c52c40)
+2017-07-12T15:44:05.2505330-06:00 0HL68M7MJ704H [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Users/galpizar/123456/Accounts/TransactionHistory/1/2017-06-01%2000:00/2017-07-31%2000:00   (e5be5b71)
+2017-07-12T15:44:05.2585330-06:00 0HL68M7MJ704H [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0 (6438bdd5)
+2017-07-12T15:44:05.2615330-06:00 0HL68M7MJ704H [INF] Executing action method "ATM_API.Controllers.TransactionHistory.GetTransactionHistory (ATM_API)" with arguments (["galpizar", "123456", "1", "6/1/2017 12:00:00 AM", "7/31/2017 12:00:00 AM"]) - ModelState is Valid (ba7f4ac2)
+2017-07-12T15:44:05.2655330-06:00 0HL68M7MJ704H [INF] Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE [u].[Username] = @__username_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-07-12T15:44:05.2665330-06:00 0HL68M7MJ704H [INF] Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE ([u].[Username] = @__username_0) AND ([u].[Password] = @__password_1))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-07-12T15:44:05.2685330-06:00 0HL68M7MJ704H [INF] Executed DbCommand (0ms) [Parameters=[@__id_account_0='?', @__start_1='?', @__end_2='?'], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id_Transaction], [t].[Description], [t].[Id_Account], [t].[TransactionAmount], [t].[TransactionDate], [t].[TransactionType]
+FROM [TransactionHistory] AS [t]
+WHERE ([t].[Id_Account] = @__id_account_0) AND ((@__start_1 <= [t].[TransactionDate]) AND ([t].[TransactionDate] <= @__end_2)) (6438bdd5)
+2017-07-12T15:44:05.2695330-06:00 0HL68M7MJ704H [INF] GetTransactionHistory OK with Id_Account:1, usr:galpizar, pwd:123456,sd:6/1/2017 12:00:00 AM,ed:7/31/2017 12:00:00 AM (fb023c49)
+2017-07-12T15:44:05.2695330-06:00 0HL68M7MJ704H [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-07-12T15:44:05.2705330-06:00 0HL68M7MJ704H [INF] Executed action "ATM_API.Controllers.TransactionHistory.GetTransactionHistory (ATM_API)" in 16.1383ms (afa2e885)
+2017-07-12T15:44:05.2705330-06:00 0HL68M7MJ704H [INF] Request finished in 21.0171ms 200 application/json; charset=utf-8 (15c52c40)
+2017-07-12T15:45:34.8905330-06:00 0HL68M7MJ704I [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Users/galpizar/123456/Accounts   (e5be5b71)
+2017-07-12T15:45:34.9285330-06:00 0HL68M7MJ704I [INF] Executed DbCommand (37ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0 (6438bdd5)
+2017-07-12T15:45:34.9315330-06:00 0HL68M7MJ704I [INF] Executing action method "ATM_API.Controllers.AccountDetailsController.GetAccountsDropDown (ATM_API)" with arguments (["galpizar", "123456"]) - ModelState is Valid (ba7f4ac2)
+2017-07-12T15:45:34.9345330-06:00 0HL68M7MJ704I [INF] Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE [u].[Username] = @__username_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-07-12T15:45:34.9545330-06:00 0HL68M7MJ704I [INF] Executed DbCommand (6ms) [Parameters=[@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE ([u].[Username] = @__username_0) AND ([u].[Password] = @__password_1))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-07-12T15:45:34.9575330-06:00 0HL68M7MJ704I [INF] Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id_User], [u].[FullName], [u].[Password], [u].[Username]
+FROM [Users] AS [u]
+WHERE ([u].[Username] = @__username_0) AND ([u].[Password] = @__password_1) (6438bdd5)
+2017-07-12T15:45:34.9635330-06:00 0HL68M7MJ704I [INF] Executed DbCommand (3ms) [Parameters=[@__id_user_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id_Account], [a].[Description]
+FROM [AccountDetails] AS [a]
+WHERE [a].[Id_User] = @__id_user_0 (6438bdd5)
+2017-07-12T15:45:34.9645330-06:00 0HL68M7MJ704I [INF] GetAccountsDropDown OK for the user:galpizar with password :123456 (4a918317)
+2017-07-12T15:45:34.9655330-06:00 0HL68M7MJ704I [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-07-12T15:45:34.9675330-06:00 0HL68M7MJ704I [INF] Executed action "ATM_API.Controllers.AccountDetailsController.GetAccountsDropDown (ATM_API)" in 75.9286ms (afa2e885)
+2017-07-12T15:45:34.9695330-06:00 0HL68M7MJ704I [INF] Request finished in 79.6944ms 200 application/json; charset=utf-8 (15c52c40)
+2017-07-12T15:45:46.1975330-06:00 0HL68M7MJ704J [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Users/galpizar/123456/Accounts/TransactionHistory/1/2017-07-01%2000:00/2017-07-31%2000:00   (e5be5b71)
+2017-07-12T15:45:46.2045330-06:00 0HL68M7MJ704J [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0 (6438bdd5)
+2017-07-12T15:45:46.2045330-06:00 0HL68M7MJ704J [INF] Executing action method "ATM_API.Controllers.TransactionHistory.GetTransactionHistory (ATM_API)" with arguments (["galpizar", "123456", "1", "7/1/2017 12:00:00 AM", "7/31/2017 12:00:00 AM"]) - ModelState is Valid (ba7f4ac2)
+2017-07-12T15:45:46.2055330-06:00 0HL68M7MJ704J [INF] Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE [u].[Username] = @__username_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-07-12T15:45:46.2075330-06:00 0HL68M7MJ704J [INF] Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE ([u].[Username] = @__username_0) AND ([u].[Password] = @__password_1))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-07-12T15:45:46.2085330-06:00 0HL68M7MJ704J [INF] Executed DbCommand (0ms) [Parameters=[@__id_account_0='?', @__start_1='?', @__end_2='?'], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id_Transaction], [t].[Description], [t].[Id_Account], [t].[TransactionAmount], [t].[TransactionDate], [t].[TransactionType]
+FROM [TransactionHistory] AS [t]
+WHERE ([t].[Id_Account] = @__id_account_0) AND ((@__start_1 <= [t].[TransactionDate]) AND ([t].[TransactionDate] <= @__end_2)) (6438bdd5)
+2017-07-12T15:45:46.2115330-06:00 0HL68M7MJ704J [INF] There aren't records on GetTransactionHistory with Id_Account:1, usr:galpizar, pwd:123456,sd:7/1/2017 12:00:00 AM,ed:7/31/2017 12:00:00 AM (8c6c6976)
+2017-07-12T15:45:46.2135330-06:00 0HL68M7MJ704J [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-07-12T15:45:46.2155330-06:00 0HL68M7MJ704J [INF] Executed action "ATM_API.Controllers.TransactionHistory.GetTransactionHistory (ATM_API)" in 14.7843ms (afa2e885)
+2017-07-12T15:45:46.2165330-06:00 0HL68M7MJ704J [INF] Request finished in 19.8155ms 400 text/plain; charset=utf-8 (15c52c40)
+2017-07-12T15:50:20.7635330-06:00 0HL68M7MJ704K [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Users/galpizar/123456/Accounts   (e5be5b71)
+2017-07-12T15:50:20.8065330-06:00 0HL68M7MJ704K [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0 (6438bdd5)
+2017-07-12T15:50:20.8075330-06:00 0HL68M7MJ704K [INF] Executing action method "ATM_API.Controllers.AccountDetailsController.GetAccountsDropDown (ATM_API)" with arguments (["galpizar", "123456"]) - ModelState is Valid (ba7f4ac2)
+2017-07-12T15:50:20.8085330-06:00 0HL68M7MJ704K [INF] Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE [u].[Username] = @__username_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-07-12T15:50:20.8105330-06:00 0HL68M7MJ704K [INF] Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE ([u].[Username] = @__username_0) AND ([u].[Password] = @__password_1))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-07-12T15:50:20.8135330-06:00 0HL68M7MJ704K [INF] Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id_User], [u].[FullName], [u].[Password], [u].[Username]
+FROM [Users] AS [u]
+WHERE ([u].[Username] = @__username_0) AND ([u].[Password] = @__password_1) (6438bdd5)
+2017-07-12T15:50:20.8145330-06:00 0HL68M7MJ704K [INF] Executed DbCommand (0ms) [Parameters=[@__id_user_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id_Account], [a].[Description]
+FROM [AccountDetails] AS [a]
+WHERE [a].[Id_User] = @__id_user_0 (6438bdd5)
+2017-07-12T15:50:20.8165330-06:00 0HL68M7MJ704K [INF] GetAccountsDropDown OK for the user:galpizar with password :123456 (4a918317)
+2017-07-12T15:50:20.8185330-06:00 0HL68M7MJ704K [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-07-12T15:50:20.8225330-06:00 0HL68M7MJ704K [INF] Executed action "ATM_API.Controllers.AccountDetailsController.GetAccountsDropDown (ATM_API)" in 34.0486ms (afa2e885)
+2017-07-12T15:50:20.8245330-06:00 0HL68M7MJ704K [INF] Request finished in 61.6387ms 200 application/json; charset=utf-8 (15c52c40)
+2017-07-12T15:50:52.1065330-06:00 0HL68M7MJ704L [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Users/galpizar/123456/Accounts/TransactionHistory/1/2017-04-01%2000:00/2017-07-31%2000:00   (e5be5b71)
+2017-07-12T15:50:52.1135330-06:00 0HL68M7MJ704L [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0 (6438bdd5)
+2017-07-12T15:50:52.1145330-06:00 0HL68M7MJ704L [INF] Executing action method "ATM_API.Controllers.TransactionHistory.GetTransactionHistory (ATM_API)" with arguments (["galpizar", "123456", "1", "4/1/2017 12:00:00 AM", "7/31/2017 12:00:00 AM"]) - ModelState is Valid (ba7f4ac2)
+2017-07-12T15:50:52.1155330-06:00 0HL68M7MJ704L [INF] Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE [u].[Username] = @__username_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-07-12T15:50:52.1165330-06:00 0HL68M7MJ704L [INF] Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE ([u].[Username] = @__username_0) AND ([u].[Password] = @__password_1))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-07-12T15:50:52.1175330-06:00 0HL68M7MJ704L [INF] Executed DbCommand (0ms) [Parameters=[@__id_account_0='?', @__start_1='?', @__end_2='?'], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id_Transaction], [t].[Description], [t].[Id_Account], [t].[TransactionAmount], [t].[TransactionDate], [t].[TransactionType]
+FROM [TransactionHistory] AS [t]
+WHERE ([t].[Id_Account] = @__id_account_0) AND ((@__start_1 <= [t].[TransactionDate]) AND ([t].[TransactionDate] <= @__end_2)) (6438bdd5)
+2017-07-12T15:50:52.1185330-06:00 0HL68M7MJ704L [INF] GetTransactionHistory OK with Id_Account:1, usr:galpizar, pwd:123456,sd:4/1/2017 12:00:00 AM,ed:7/31/2017 12:00:00 AM (f3b9ab42)
+2017-07-12T15:50:52.1185330-06:00 0HL68M7MJ704L [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-07-12T15:50:52.1205330-06:00 0HL68M7MJ704L [INF] Executed action "ATM_API.Controllers.TransactionHistory.GetTransactionHistory (ATM_API)" in 9.6948ms (afa2e885)
+2017-07-12T15:50:52.1225330-06:00 0HL68M7MJ704L [INF] Request finished in 15.3616ms 200 application/json; charset=utf-8 (15c52c40)
+2017-07-12T16:07:31.0361164-06:00 0HL68M7MJ704M [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Users/galpizar/123456   (e5be5b71)
+2017-07-12T16:07:31.0441172-06:00 0HL68M7MJ704M [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0 (6438bdd5)
+2017-07-12T16:07:31.0451173-06:00 0HL68M7MJ704M [INF] Executing action method "ATM_API.Controllers.UserController.ValidateUser (ATM_API)" with arguments (["galpizar", "123456"]) - ModelState is Valid (ba7f4ac2)
+2017-07-12T16:07:31.0461174-06:00 0HL68M7MJ704M [INF] Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE [u].[Username] = @__username_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-07-12T16:07:31.0471175-06:00 0HL68M7MJ704M [INF] Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE ([u].[Username] = @__username_0) AND ([u].[Password] = @__password_1))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-07-12T16:07:31.0491177-06:00 0HL68M7MJ704M [INF] Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id_User], [u].[FullName], [u].[Password], [u].[Username]
+FROM [Users] AS [u]
+WHERE ([u].[Username] = @__username_0) AND ([u].[Password] = @__password_1) (6438bdd5)
+2017-07-12T16:07:31.0491177-06:00 0HL68M7MJ704M [INF] Log In for user:galpizar with password :123456 (6d1e4ceb)
+2017-07-12T16:07:31.0511179-06:00 0HL68M7MJ704M [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-07-12T16:07:31.0531181-06:00 0HL68M7MJ704M [INF] Executed action "ATM_API.Controllers.UserController.ValidateUser (ATM_API)" in 13.675ms (afa2e885)
+2017-07-12T16:07:31.0541182-06:00 0HL68M7MJ704M [INF] Request finished in 18.249ms 200 application/json; charset=utf-8 (15c52c40)
+2017-07-12T16:07:32.1692297-06:00 0HL68M7MJ704N [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Users/galpizar/123456/AccountDetails   (e5be5b71)
+2017-07-12T16:07:32.1742302-06:00 0HL68M7MJ704N [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0 (6438bdd5)
+2017-07-12T16:07:32.1752303-06:00 0HL68M7MJ704N [INF] Executing action method "ATM_API.Controllers.AccountDetailsController.GetAccountDetails (ATM_API)" with arguments (["galpizar", "123456"]) - ModelState is Valid (ba7f4ac2)
+2017-07-12T16:07:32.1882316-06:00 0HL68M7MJ704N [INF] Executed DbCommand (3ms) [Parameters=[@__username_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE [u].[Username] = @__username_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-07-12T16:07:32.1922320-06:00 0HL68M7MJ704N [INF] Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE ([u].[Username] = @__username_0) AND ([u].[Password] = @__password_1))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-07-12T16:07:32.1952323-06:00 0HL68M7MJ704N [INF] Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id_User], [u].[FullName], [u].[Password], [u].[Username]
+FROM [Users] AS [u]
+WHERE ([u].[Username] = @__username_0) AND ([u].[Password] = @__password_1) (6438bdd5)
+2017-07-12T16:07:32.2262354-06:00 0HL68M7MJ704N [INF] Executed DbCommand (15ms) [Parameters=[@__id_user_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id_Account], [a].[CreatedDate], [a].[CurrencyType], [a].[Description], [a].[Id_User], [a].[TotalAmount], [a].[isActive]
+FROM [AccountDetails] AS [a]
+WHERE ([a].[Id_User] = @__id_user_0) AND ([a].[isActive] = 1) (6438bdd5)
+2017-07-12T16:07:32.2642392-06:00 0HL68M7MJ704N [INF] GetAccountDetails OK for the user:galpizar with password :123456 (44b57161)
+2017-07-12T16:07:32.2662394-06:00 0HL68M7MJ704N [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-07-12T16:07:32.2762404-06:00 0HL68M7MJ704N [INF] Executed action "ATM_API.Controllers.AccountDetailsController.GetAccountDetails (ATM_API)" in 105.1805ms (afa2e885)
+2017-07-12T16:07:32.2762404-06:00 0HL68M7MJ704N [INF] Request finished in 107.1398ms 200 application/json; charset=utf-8 (15c52c40)
+2017-07-12T16:07:33.5903718-06:00 0HL68M7MJ704O [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Users/galpizar/123456/Accounts   (e5be5b71)
+2017-07-12T16:07:33.6153743-06:00 0HL68M7MJ704O [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0 (6438bdd5)
+2017-07-12T16:07:33.6183746-06:00 0HL68M7MJ704O [INF] Executing action method "ATM_API.Controllers.AccountDetailsController.GetAccountsDropDown (ATM_API)" with arguments (["galpizar", "123456"]) - ModelState is Valid (ba7f4ac2)
+2017-07-12T16:07:33.6223750-06:00 0HL68M7MJ704O [INF] Executed DbCommand (1ms) [Parameters=[@__username_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE [u].[Username] = @__username_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-07-12T16:07:33.6253753-06:00 0HL68M7MJ704O [INF] Executed DbCommand (2ms) [Parameters=[@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE ([u].[Username] = @__username_0) AND ([u].[Password] = @__password_1))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-07-12T16:07:33.6283756-06:00 0HL68M7MJ704O [INF] Executed DbCommand (1ms) [Parameters=[@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id_User], [u].[FullName], [u].[Password], [u].[Username]
+FROM [Users] AS [u]
+WHERE ([u].[Username] = @__username_0) AND ([u].[Password] = @__password_1) (6438bdd5)
+2017-07-12T16:07:33.6313759-06:00 0HL68M7MJ704O [INF] Executed DbCommand (0ms) [Parameters=[@__id_user_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id_Account], [a].[Description]
+FROM [AccountDetails] AS [a]
+WHERE [a].[Id_User] = @__id_user_0 (6438bdd5)
+2017-07-12T16:07:33.6323760-06:00 0HL68M7MJ704O [INF] GetAccountsDropDown OK for the user:galpizar with password :123456 (4a918317)
+2017-07-12T16:07:33.6323760-06:00 0HL68M7MJ704O [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-07-12T16:07:33.6333761-06:00 0HL68M7MJ704O [INF] Executed action "ATM_API.Controllers.AccountDetailsController.GetAccountsDropDown (ATM_API)" in 38.3628ms (afa2e885)
+2017-07-12T16:07:33.6363764-06:00 0HL68M7MJ704O [INF] Request finished in 46.4616ms 200 application/json; charset=utf-8 (15c52c40)
+2017-07-12T16:08:28.8865330-06:00 0HL68M7MJ704P [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/Users/galpizar/123456/Accounts/TransactionHistory/Dispense/1/50/Debit  0 (e5be5b71)
+2017-07-12T16:08:28.8955330-06:00 0HL68M7MJ704P [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0 (6438bdd5)
+2017-07-12T16:08:28.8985330-06:00 0HL68M7MJ704P [INF] Executing action method "ATM_API.Controllers.TransactionHistory.Dispense (ATM_API)" with arguments (["galpizar", "123456", "1", "50", "Debit"]) - ModelState is Valid (ba7f4ac2)
+2017-07-12T16:08:28.9055330-06:00 0HL68M7MJ704P [INF] Executed DbCommand (1ms) [Parameters=[@__id_account_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id_Account], [a].[CreatedDate], [a].[CurrencyType], [a].[Description], [a].[Id_User], [a].[TotalAmount], [a].[isActive]
+FROM [AccountDetails] AS [a]
+WHERE [a].[Id_Account] = @__id_account_0 (6438bdd5)
+2017-07-12T16:08:28.9305330-06:00 0HL68M7MJ704P [INF] Executed DbCommand (1ms) [Parameters=[@__id_account_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id_Account], [a].[CreatedDate], [a].[CurrencyType], [a].[Description], [a].[Id_User], [a].[TotalAmount], [a].[isActive]
+FROM [AccountDetails] AS [a]
+WHERE [a].[Id_Account] = @__id_account_0 (6438bdd5)
+2017-07-12T16:08:28.9535330-06:00 0HL68M7MJ704P [INF] Executed DbCommand (0ms) [Parameters=[@__id_account_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id_Account], [a].[CreatedDate], [a].[CurrencyType], [a].[Description], [a].[Id_User], [a].[TotalAmount], [a].[isActive]
+FROM [AccountDetails] AS [a]
+WHERE [a].[Id_Account] = @__id_account_0 (6438bdd5)
+2017-07-12T16:08:28.9595330-06:00 0HL68M7MJ704P [INF] Dispense money Failed with Id_Account:1, usr:galpizar, pwd:123456,am:50,desc:Debit (890f2e6a)
+2017-07-12T16:08:28.9615330-06:00 0HL68M7MJ704P [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-07-12T16:08:28.9615330-06:00 0HL68M7MJ704P [INF] Executed action "ATM_API.Controllers.TransactionHistory.Dispense (ATM_API)" in 71.6854ms (afa2e885)
+2017-07-12T16:08:28.9635330-06:00 0HL68M7MJ704P [INF] Request finished in 76.3899ms 400 text/plain; charset=utf-8 (15c52c40)
+2017-07-12T16:08:33.2145330-06:00 0HL68M7MJ704Q [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/Users/galpizar/123456/Accounts/TransactionHistory/Dispense/1/50/Debit  0 (e5be5b71)
+2017-07-12T16:08:33.2255330-06:00 0HL68M7MJ704Q [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0 (6438bdd5)
+2017-07-12T16:08:33.2265330-06:00 0HL68M7MJ704Q [INF] Executing action method "ATM_API.Controllers.TransactionHistory.Dispense (ATM_API)" with arguments (["galpizar", "123456", "1", "50", "Debit"]) - ModelState is Valid (ba7f4ac2)
+2017-07-12T16:08:33.2285330-06:00 0HL68M7MJ704Q [INF] Executed DbCommand (0ms) [Parameters=[@__id_account_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id_Account], [a].[CreatedDate], [a].[CurrencyType], [a].[Description], [a].[Id_User], [a].[TotalAmount], [a].[isActive]
+FROM [AccountDetails] AS [a]
+WHERE [a].[Id_Account] = @__id_account_0 (6438bdd5)
+2017-07-12T16:08:33.2295330-06:00 0HL68M7MJ704Q [INF] Executed DbCommand (0ms) [Parameters=[@__id_account_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id_Account], [a].[CreatedDate], [a].[CurrencyType], [a].[Description], [a].[Id_User], [a].[TotalAmount], [a].[isActive]
+FROM [AccountDetails] AS [a]
+WHERE [a].[Id_Account] = @__id_account_0 (6438bdd5)
+2017-07-12T16:08:33.2315330-06:00 0HL68M7MJ704Q [INF] Executed DbCommand (0ms) [Parameters=[@__id_account_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id_Account], [a].[CreatedDate], [a].[CurrencyType], [a].[Description], [a].[Id_User], [a].[TotalAmount], [a].[isActive]
+FROM [AccountDetails] AS [a]
+WHERE [a].[Id_Account] = @__id_account_0 (6438bdd5)
+2017-07-12T16:08:33.2315330-06:00 0HL68M7MJ704Q [INF] Dispense money Failed with Id_Account:1, usr:galpizar, pwd:123456,am:50,desc:Debit (890f2e6a)
+2017-07-12T16:08:33.2325330-06:00 0HL68M7MJ704Q [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-07-12T16:08:33.2325330-06:00 0HL68M7MJ704Q [INF] Executed action "ATM_API.Controllers.TransactionHistory.Dispense (ATM_API)" in 12.8374ms (afa2e885)
+2017-07-12T16:08:33.2335330-06:00 0HL68M7MJ704Q [INF] Request finished in 19.0388ms 400 text/plain; charset=utf-8 (15c52c40)
+2017-07-12T16:12:00.3325330-06:00 0HL68M7MJ704R [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Users/galpizar/123456/Accounts   (e5be5b71)
+2017-07-12T16:12:00.3875330-06:00 0HL68M7MJ704R [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0 (6438bdd5)
+2017-07-12T16:12:00.4045330-06:00 0HL68M7MJ704R [INF] Executing action method "ATM_API.Controllers.AccountDetailsController.GetAccountsDropDown (ATM_API)" with arguments (["galpizar", "123456"]) - ModelState is Valid (ba7f4ac2)
+2017-07-12T16:12:00.4195330-06:00 0HL68M7MJ704R [INF] Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE [u].[Username] = @__username_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-07-12T16:12:00.4205330-06:00 0HL68M7MJ704R [INF] Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE ([u].[Username] = @__username_0) AND ([u].[Password] = @__password_1))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-07-12T16:12:00.4255330-06:00 0HL68M7MJ704R [INF] Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id_User], [u].[FullName], [u].[Password], [u].[Username]
+FROM [Users] AS [u]
+WHERE ([u].[Username] = @__username_0) AND ([u].[Password] = @__password_1) (6438bdd5)
+2017-07-12T16:12:00.4285330-06:00 0HL68M7MJ704R [INF] Executed DbCommand (0ms) [Parameters=[@__id_user_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id_Account], [a].[Description]
+FROM [AccountDetails] AS [a]
+WHERE [a].[Id_User] = @__id_user_0 (6438bdd5)
+2017-07-12T16:12:00.4375330-06:00 0HL68M7MJ704R [INF] GetAccountsDropDown OK for the user:galpizar with password :123456 (4a918317)
+2017-07-12T16:12:00.4415330-06:00 0HL68M7MJ704R [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-07-12T16:12:00.4445330-06:00 0HL68M7MJ704R [INF] Executed action "ATM_API.Controllers.AccountDetailsController.GetAccountsDropDown (ATM_API)" in 60.3846ms (afa2e885)
+2017-07-12T16:12:00.4475330-06:00 0HL68M7MJ704R [INF] Request finished in 114.9763ms 200 application/json; charset=utf-8 (15c52c40)
+2017-07-12T16:12:05.5585330-06:00 0HL68M7MJ704S [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/Users/galpizar/123456/Accounts/TransactionHistory/Dispense/1/1/Debit  0 (e5be5b71)
+2017-07-12T16:12:05.5625330-06:00 0HL68M7MJ704S [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0 (6438bdd5)
+2017-07-12T16:12:05.5625330-06:00 0HL68M7MJ704S [INF] Executing action method "ATM_API.Controllers.TransactionHistory.Dispense (ATM_API)" with arguments (["galpizar", "123456", "1", "1", "Debit"]) - ModelState is Valid (ba7f4ac2)
+2017-07-12T16:12:05.5635330-06:00 0HL68M7MJ704S [INF] Executed DbCommand (0ms) [Parameters=[@__id_account_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id_Account], [a].[CreatedDate], [a].[CurrencyType], [a].[Description], [a].[Id_User], [a].[TotalAmount], [a].[isActive]
+FROM [AccountDetails] AS [a]
+WHERE [a].[Id_Account] = @__id_account_0 (6438bdd5)
+2017-07-12T16:12:05.5655330-06:00 0HL68M7MJ704S [INF] Executed DbCommand (0ms) [Parameters=[@__id_account_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id_Account], [a].[CreatedDate], [a].[CurrencyType], [a].[Description], [a].[Id_User], [a].[TotalAmount], [a].[isActive]
+FROM [AccountDetails] AS [a]
+WHERE [a].[Id_Account] = @__id_account_0 (6438bdd5)
+2017-07-12T16:12:05.5665330-06:00 0HL68M7MJ704S [INF] Executed DbCommand (0ms) [Parameters=[@__id_account_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id_Account], [a].[CreatedDate], [a].[CurrencyType], [a].[Description], [a].[Id_User], [a].[TotalAmount], [a].[isActive]
+FROM [AccountDetails] AS [a]
+WHERE [a].[Id_Account] = @__id_account_0 (6438bdd5)
+2017-07-12T16:12:05.5675330-06:00 0HL68M7MJ704S [INF] Dispense money Failed with Id_Account:1, usr:galpizar, pwd:123456,am:1,desc:Debit (2f55a5e0)
+2017-07-12T16:12:05.5685330-06:00 0HL68M7MJ704S [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-07-12T16:12:05.5685330-06:00 0HL68M7MJ704S [INF] Executed action "ATM_API.Controllers.TransactionHistory.Dispense (ATM_API)" in 8.6668ms (afa2e885)
+2017-07-12T16:12:05.5705330-06:00 0HL68M7MJ704S [INF] Request finished in 12.1252ms 400 text/plain; charset=utf-8 (15c52c40)
+2017-07-12T16:12:25.4715330-06:00 0HL68M7MJ704T [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/Users/galpizar/123456/Accounts/TransactionHistory/Dispense/1/1/Debit  0 (e5be5b71)
+2017-07-12T16:12:25.4805330-06:00 0HL68M7MJ704T [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0 (6438bdd5)
+2017-07-12T16:12:25.4815330-06:00 0HL68M7MJ704T [INF] Executing action method "ATM_API.Controllers.TransactionHistory.Dispense (ATM_API)" with arguments (["galpizar", "123456", "1", "1", "Debit"]) - ModelState is Valid (ba7f4ac2)
+2017-07-12T16:12:25.4835330-06:00 0HL68M7MJ704T [INF] Executed DbCommand (0ms) [Parameters=[@__id_account_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id_Account], [a].[CreatedDate], [a].[CurrencyType], [a].[Description], [a].[Id_User], [a].[TotalAmount], [a].[isActive]
+FROM [AccountDetails] AS [a]
+WHERE [a].[Id_Account] = @__id_account_0 (6438bdd5)
+2017-07-12T16:12:25.4855330-06:00 0HL68M7MJ704T [INF] Executed DbCommand (0ms) [Parameters=[@__id_account_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id_Account], [a].[CreatedDate], [a].[CurrencyType], [a].[Description], [a].[Id_User], [a].[TotalAmount], [a].[isActive]
+FROM [AccountDetails] AS [a]
+WHERE [a].[Id_Account] = @__id_account_0 (6438bdd5)
+2017-07-12T16:12:25.4865330-06:00 0HL68M7MJ704T [INF] Executed DbCommand (0ms) [Parameters=[@__id_account_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id_Account], [a].[CreatedDate], [a].[CurrencyType], [a].[Description], [a].[Id_User], [a].[TotalAmount], [a].[isActive]
+FROM [AccountDetails] AS [a]
+WHERE [a].[Id_Account] = @__id_account_0 (6438bdd5)
+2017-07-12T16:12:25.4875330-06:00 0HL68M7MJ704T [INF] Dispense money Failed with Id_Account:1, usr:galpizar, pwd:123456,am:1,desc:Debit (2f55a5e0)
+2017-07-12T16:12:25.4895330-06:00 0HL68M7MJ704T [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-07-12T16:12:25.4905330-06:00 0HL68M7MJ704T [INF] Executed action "ATM_API.Controllers.TransactionHistory.Dispense (ATM_API)" in 11.8981ms (afa2e885)
+2017-07-12T16:12:25.4905330-06:00 0HL68M7MJ704T [INF] Request finished in 19.743ms 400 text/plain; charset=utf-8 (15c52c40)
+2017-07-12T16:13:11.0075330-06:00 0HL68M7MJ704U [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/Users/galpizar/123456/Accounts/TransactionHistory/Dispense/2/1/Debit  0 (e5be5b71)
+2017-07-12T16:13:11.0135330-06:00 0HL68M7MJ704U [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0 (6438bdd5)
+2017-07-12T16:13:11.0145330-06:00 0HL68M7MJ704U [INF] Executing action method "ATM_API.Controllers.TransactionHistory.Dispense (ATM_API)" with arguments (["galpizar", "123456", "2", "1", "Debit"]) - ModelState is Valid (ba7f4ac2)
+2017-07-12T16:13:11.0175330-06:00 0HL68M7MJ704U [INF] Executed DbCommand (0ms) [Parameters=[@__id_account_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id_Account], [a].[CreatedDate], [a].[CurrencyType], [a].[Description], [a].[Id_User], [a].[TotalAmount], [a].[isActive]
+FROM [AccountDetails] AS [a]
+WHERE [a].[Id_Account] = @__id_account_0 (6438bdd5)
+2017-07-12T16:13:11.0185330-06:00 0HL68M7MJ704U [INF] Executed DbCommand (0ms) [Parameters=[@__id_account_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id_Account], [a].[CreatedDate], [a].[CurrencyType], [a].[Description], [a].[Id_User], [a].[TotalAmount], [a].[isActive]
+FROM [AccountDetails] AS [a]
+WHERE [a].[Id_Account] = @__id_account_0 (6438bdd5)
+2017-07-12T16:13:11.0205330-06:00 0HL68M7MJ704U [INF] Executed DbCommand (0ms) [Parameters=[@__id_account_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id_Account], [a].[CreatedDate], [a].[CurrencyType], [a].[Description], [a].[Id_User], [a].[TotalAmount], [a].[isActive]
+FROM [AccountDetails] AS [a]
+WHERE [a].[Id_Account] = @__id_account_0 (6438bdd5)
+2017-07-12T16:13:11.0235330-06:00 0HL68M7MJ704U [INF] Dispense money Failed with Id_Account:2, usr:galpizar, pwd:123456,am:1,desc:Debit (dcaa2c1d)
+2017-07-12T16:13:11.0265330-06:00 0HL68M7MJ704U [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-07-12T16:13:11.0275330-06:00 0HL68M7MJ704U [INF] Executed action "ATM_API.Controllers.TransactionHistory.Dispense (ATM_API)" in 15.8499ms (afa2e885)
+2017-07-12T16:13:11.0285330-06:00 0HL68M7MJ704U [INF] Request finished in 21.4182ms 400 text/plain; charset=utf-8 (15c52c40)
+2017-07-12T16:15:13.4375330-06:00 0HL68M7MJ704V [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Users/galpizar/123456/AccountDetails   (e5be5b71)
+2017-07-12T16:15:13.4785330-06:00 0HL68M7MJ704V [INF] Executed DbCommand (39ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0 (6438bdd5)
+2017-07-12T16:15:13.4795330-06:00 0HL68M7MJ704V [INF] Executing action method "ATM_API.Controllers.AccountDetailsController.GetAccountDetails (ATM_API)" with arguments (["galpizar", "123456"]) - ModelState is Valid (ba7f4ac2)
+2017-07-12T16:15:13.4815330-06:00 0HL68M7MJ704V [INF] Executed DbCommand (1ms) [Parameters=[@__username_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE [u].[Username] = @__username_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-07-12T16:15:13.4855330-06:00 0HL68M7MJ704V [INF] Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE ([u].[Username] = @__username_0) AND ([u].[Password] = @__password_1))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-07-12T16:15:13.4885330-06:00 0HL68M7MJ704V [INF] Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id_User], [u].[FullName], [u].[Password], [u].[Username]
+FROM [Users] AS [u]
+WHERE ([u].[Username] = @__username_0) AND ([u].[Password] = @__password_1) (6438bdd5)
+2017-07-12T16:15:13.4935330-06:00 0HL68M7MJ704V [INF] Executed DbCommand (0ms) [Parameters=[@__id_user_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id_Account], [a].[CreatedDate], [a].[CurrencyType], [a].[Description], [a].[Id_User], [a].[TotalAmount], [a].[isActive]
+FROM [AccountDetails] AS [a]
+WHERE ([a].[Id_User] = @__id_user_0) AND ([a].[isActive] = 1) (6438bdd5)
+2017-07-12T16:15:13.4955330-06:00 0HL68M7MJ704V [INF] GetAccountDetails OK for the user:galpizar with password :123456 (44b57161)
+2017-07-12T16:15:13.4965330-06:00 0HL68M7MJ704V [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-07-12T16:15:13.4975330-06:00 0HL68M7MJ704V [INF] Executed action "ATM_API.Controllers.AccountDetailsController.GetAccountDetails (ATM_API)" in 58.654ms (afa2e885)
+2017-07-12T16:15:13.4995330-06:00 0HL68M7MJ704V [INF] Request finished in 61.3568ms 200 application/json; charset=utf-8 (15c52c40)
+2017-07-12T16:15:23.1255330-06:00 0HL68M7MJ7050 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Users/galpizar/123456/Accounts   (e5be5b71)
+2017-07-12T16:15:23.1695330-06:00 0HL68M7MJ7050 [INF] Executed DbCommand (43ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0 (6438bdd5)
+2017-07-12T16:15:23.1705330-06:00 0HL68M7MJ7050 [INF] Executing action method "ATM_API.Controllers.AccountDetailsController.GetAccountsDropDown (ATM_API)" with arguments (["galpizar", "123456"]) - ModelState is Valid (ba7f4ac2)
+2017-07-12T16:15:23.1845330-06:00 0HL68M7MJ7050 [INF] Executed DbCommand (12ms) [Parameters=[@__username_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE [u].[Username] = @__username_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-07-12T16:15:23.1945330-06:00 0HL68M7MJ7050 [INF] Executed DbCommand (8ms) [Parameters=[@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE ([u].[Username] = @__username_0) AND ([u].[Password] = @__password_1))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-07-12T16:15:23.2015330-06:00 0HL68M7MJ7050 [INF] Executed DbCommand (4ms) [Parameters=[@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id_User], [u].[FullName], [u].[Password], [u].[Username]
+FROM [Users] AS [u]
+WHERE ([u].[Username] = @__username_0) AND ([u].[Password] = @__password_1) (6438bdd5)
+2017-07-12T16:15:23.2125330-06:00 0HL68M7MJ7050 [INF] Executed DbCommand (5ms) [Parameters=[@__id_user_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id_Account], [a].[Description]
+FROM [AccountDetails] AS [a]
+WHERE [a].[Id_User] = @__id_user_0 (6438bdd5)
+2017-07-12T16:15:23.2185330-06:00 0HL68M7MJ7050 [INF] GetAccountsDropDown OK for the user:galpizar with password :123456 (4a918317)
+2017-07-12T16:15:23.2195330-06:00 0HL68M7MJ7050 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-07-12T16:15:23.2205330-06:00 0HL68M7MJ7050 [INF] Executed action "ATM_API.Controllers.AccountDetailsController.GetAccountsDropDown (ATM_API)" in 94.7053ms (afa2e885)
+2017-07-12T16:15:23.2255330-06:00 0HL68M7MJ7050 [INF] Request finished in 99.5859ms 200 application/json; charset=utf-8 (15c52c40)
+2017-07-12T16:15:26.7865330-06:00 0HL68M7MJ7051 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Users/galpizar/123456/Accounts   (e5be5b71)
+2017-07-12T16:15:26.8105330-06:00 0HL68M7MJ7051 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0 (6438bdd5)
+2017-07-12T16:15:26.8165330-06:00 0HL68M7MJ7051 [INF] Executing action method "ATM_API.Controllers.AccountDetailsController.GetAccountsDropDown (ATM_API)" with arguments (["galpizar", "123456"]) - ModelState is Valid (ba7f4ac2)
+2017-07-12T16:15:26.8195330-06:00 0HL68M7MJ7051 [INF] Executed DbCommand (1ms) [Parameters=[@__username_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE [u].[Username] = @__username_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-07-12T16:15:26.8275330-06:00 0HL68M7MJ7051 [INF] Executed DbCommand (5ms) [Parameters=[@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE ([u].[Username] = @__username_0) AND ([u].[Password] = @__password_1))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-07-12T16:15:26.8325330-06:00 0HL68M7MJ7051 [INF] Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id_User], [u].[FullName], [u].[Password], [u].[Username]
+FROM [Users] AS [u]
+WHERE ([u].[Username] = @__username_0) AND ([u].[Password] = @__password_1) (6438bdd5)
+2017-07-12T16:15:26.8355330-06:00 0HL68M7MJ7051 [INF] Executed DbCommand (0ms) [Parameters=[@__id_user_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id_Account], [a].[Description]
+FROM [AccountDetails] AS [a]
+WHERE [a].[Id_User] = @__id_user_0 (6438bdd5)
+2017-07-12T16:15:26.8365330-06:00 0HL68M7MJ7051 [INF] GetAccountsDropDown OK for the user:galpizar with password :123456 (4a918317)
+2017-07-12T16:15:26.8375330-06:00 0HL68M7MJ7051 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-07-12T16:15:26.8375330-06:00 0HL68M7MJ7051 [INF] Executed action "ATM_API.Controllers.AccountDetailsController.GetAccountsDropDown (ATM_API)" in 37.6266ms (afa2e885)
+2017-07-12T16:15:26.8385330-06:00 0HL68M7MJ7051 [INF] Request finished in 51.6361ms 200 application/json; charset=utf-8 (15c52c40)
+2017-07-12T16:15:39.3365330-06:00 0HL68M7MJ7052 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Users/galpizar/123456/Accounts/TransactionHistory/1/2017-03-01%2000:00/2017-07-31%2000:00   (e5be5b71)
+2017-07-12T16:15:39.3425330-06:00 0HL68M7MJ7052 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0 (6438bdd5)
+2017-07-12T16:15:39.3435330-06:00 0HL68M7MJ7052 [INF] Executing action method "ATM_API.Controllers.TransactionHistory.GetTransactionHistory (ATM_API)" with arguments (["galpizar", "123456", "1", "3/1/2017 12:00:00 AM", "7/31/2017 12:00:00 AM"]) - ModelState is Valid (ba7f4ac2)
+2017-07-12T16:15:39.3455330-06:00 0HL68M7MJ7052 [INF] Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE [u].[Username] = @__username_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-07-12T16:15:39.3465330-06:00 0HL68M7MJ7052 [INF] Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE ([u].[Username] = @__username_0) AND ([u].[Password] = @__password_1))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-07-12T16:15:39.3475330-06:00 0HL68M7MJ7052 [INF] Executed DbCommand (0ms) [Parameters=[@__id_account_0='?', @__start_1='?', @__end_2='?'], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id_Transaction], [t].[Description], [t].[Id_Account], [t].[TransactionAmount], [t].[TransactionDate], [t].[TransactionType]
+FROM [TransactionHistory] AS [t]
+WHERE ([t].[Id_Account] = @__id_account_0) AND ((@__start_1 <= [t].[TransactionDate]) AND ([t].[TransactionDate] <= @__end_2)) (6438bdd5)
+2017-07-12T16:15:39.3485330-06:00 0HL68M7MJ7052 [INF] GetTransactionHistory OK with Id_Account:1, usr:galpizar, pwd:123456,sd:3/1/2017 12:00:00 AM,ed:7/31/2017 12:00:00 AM (ee541b11)
+2017-07-12T16:15:39.3495330-06:00 0HL68M7MJ7052 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-07-12T16:15:39.3505330-06:00 0HL68M7MJ7052 [INF] Executed action "ATM_API.Controllers.TransactionHistory.GetTransactionHistory (ATM_API)" in 12.7043ms (afa2e885)
+2017-07-12T16:15:39.3535330-06:00 0HL68M7MJ7052 [INF] Request finished in 17.1477ms 200 application/json; charset=utf-8 (15c52c40)
+2017-07-12T16:17:10.1675330-06:00 0HL68M7MJ7053 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Users/galpizar/123456   (e5be5b71)
+2017-07-12T16:17:10.1725330-06:00 0HL68M7MJ7053 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0 (6438bdd5)
+2017-07-12T16:17:10.1735330-06:00 0HL68M7MJ7053 [INF] Executing action method "ATM_API.Controllers.UserController.ValidateUser (ATM_API)" with arguments (["galpizar", "123456"]) - ModelState is Valid (ba7f4ac2)
+2017-07-12T16:17:10.1745330-06:00 0HL68M7MJ7053 [INF] Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE [u].[Username] = @__username_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-07-12T16:17:10.1765330-06:00 0HL68M7MJ7053 [INF] Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE ([u].[Username] = @__username_0) AND ([u].[Password] = @__password_1))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-07-12T16:17:10.1785330-06:00 0HL68M7MJ7053 [INF] Executed DbCommand (1ms) [Parameters=[@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id_User], [u].[FullName], [u].[Password], [u].[Username]
+FROM [Users] AS [u]
+WHERE ([u].[Username] = @__username_0) AND ([u].[Password] = @__password_1) (6438bdd5)
+2017-07-12T16:17:10.1795330-06:00 0HL68M7MJ7053 [INF] Log In for user:galpizar with password :123456 (6d1e4ceb)
+2017-07-12T16:17:10.1795330-06:00 0HL68M7MJ7053 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-07-12T16:17:10.1795330-06:00 0HL68M7MJ7053 [INF] Executed action "ATM_API.Controllers.UserController.ValidateUser (ATM_API)" in 10.2651ms (afa2e885)
+2017-07-12T16:17:10.1805330-06:00 0HL68M7MJ7053 [INF] Request finished in 12.972ms 200 application/json; charset=utf-8 (15c52c40)
+2017-07-12T16:18:46.9665330-06:00 0HL68M7MJ7054 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Users/galpizar/123456   (e5be5b71)
+2017-07-12T16:18:46.9705330-06:00 0HL68M7MJ7054 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0 (6438bdd5)
+2017-07-12T16:18:46.9715330-06:00 0HL68M7MJ7054 [INF] Executing action method "ATM_API.Controllers.UserController.ValidateUser (ATM_API)" with arguments (["galpizar", "123456"]) - ModelState is Valid (ba7f4ac2)
+2017-07-12T16:18:46.9725330-06:00 0HL68M7MJ7054 [INF] Executed DbCommand (1ms) [Parameters=[@__username_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE [u].[Username] = @__username_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-07-12T16:18:46.9745330-06:00 0HL68M7MJ7054 [INF] Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE ([u].[Username] = @__username_0) AND ([u].[Password] = @__password_1))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-07-12T16:18:46.9745330-06:00 0HL68M7MJ7054 [INF] Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id_User], [u].[FullName], [u].[Password], [u].[Username]
+FROM [Users] AS [u]
+WHERE ([u].[Username] = @__username_0) AND ([u].[Password] = @__password_1) (6438bdd5)
+2017-07-12T16:18:46.9765330-06:00 0HL68M7MJ7054 [INF] Log In for user:galpizar with password :123456 (6d1e4ceb)
+2017-07-12T16:18:46.9765330-06:00 0HL68M7MJ7054 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-07-12T16:18:46.9775330-06:00 0HL68M7MJ7054 [INF] Executed action "ATM_API.Controllers.UserController.ValidateUser (ATM_API)" in 9.3272ms (afa2e885)
+2017-07-12T16:18:46.9775330-06:00 0HL68M7MJ7054 [INF] Request finished in 10.9831ms 200 application/json; charset=utf-8 (15c52c40)
+2017-07-12T16:20:21.0865330-06:00 0HL68M7MJ7055 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Users/galpizar/123456   (e5be5b71)
+2017-07-12T16:20:21.0915330-06:00 0HL68M7MJ7055 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0 (6438bdd5)
+2017-07-12T16:20:21.0915330-06:00 0HL68M7MJ7055 [INF] Executing action method "ATM_API.Controllers.UserController.ValidateUser (ATM_API)" with arguments (["galpizar", "123456"]) - ModelState is Valid (ba7f4ac2)
+2017-07-12T16:20:21.0925330-06:00 0HL68M7MJ7055 [INF] Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE [u].[Username] = @__username_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-07-12T16:20:21.0935330-06:00 0HL68M7MJ7055 [INF] Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE ([u].[Username] = @__username_0) AND ([u].[Password] = @__password_1))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-07-12T16:20:21.0945330-06:00 0HL68M7MJ7055 [INF] Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id_User], [u].[FullName], [u].[Password], [u].[Username]
+FROM [Users] AS [u]
+WHERE ([u].[Username] = @__username_0) AND ([u].[Password] = @__password_1) (6438bdd5)
+2017-07-12T16:20:21.0955330-06:00 0HL68M7MJ7055 [INF] Log In for user:galpizar with password :123456 (6d1e4ceb)
+2017-07-12T16:20:21.0955330-06:00 0HL68M7MJ7055 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-07-12T16:20:21.0965330-06:00 0HL68M7MJ7055 [INF] Executed action "ATM_API.Controllers.UserController.ValidateUser (ATM_API)" in 7.3562ms (afa2e885)
+2017-07-12T16:20:21.0985330-06:00 0HL68M7MJ7055 [INF] Request finished in 11.3726ms 200 application/json; charset=utf-8 (15c52c40)
+2017-07-12T16:45:55.5865330-06:00 0HL68M7MJ7056 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Users/galpizar/123456   (e5be5b71)
+2017-07-12T16:45:55.5915330-06:00 0HL68M7MJ7056 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0 (6438bdd5)
+2017-07-12T16:45:55.5925330-06:00 0HL68M7MJ7056 [INF] Executing action method "ATM_API.Controllers.UserController.ValidateUser (ATM_API)" with arguments (["galpizar", "123456"]) - ModelState is Valid (ba7f4ac2)
+2017-07-12T16:45:55.5925330-06:00 0HL68M7MJ7056 [INF] Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE [u].[Username] = @__username_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-07-12T16:45:55.5935330-06:00 0HL68M7MJ7056 [INF] Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE ([u].[Username] = @__username_0) AND ([u].[Password] = @__password_1))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-07-12T16:45:55.5945330-06:00 0HL68M7MJ7056 [INF] Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id_User], [u].[FullName], [u].[Password], [u].[Username]
+FROM [Users] AS [u]
+WHERE ([u].[Username] = @__username_0) AND ([u].[Password] = @__password_1) (6438bdd5)
+2017-07-12T16:45:55.5955330-06:00 0HL68M7MJ7056 [INF] Log In for user:galpizar with password :123456 (6d1e4ceb)
+2017-07-12T16:45:55.5965330-06:00 0HL68M7MJ7056 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-07-12T16:45:55.5975330-06:00 0HL68M7MJ7056 [INF] Executed action "ATM_API.Controllers.UserController.ValidateUser (ATM_API)" in 9.973ms (afa2e885)
+2017-07-12T16:45:55.5975330-06:00 0HL68M7MJ7056 [INF] Request finished in 11.1556ms 200 application/json; charset=utf-8 (15c52c40)
+2017-07-12T16:56:02.3345330-06:00 0HL68M7MJ7057 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Users/galpizar/123456/AccountDetails   (e5be5b71)
+2017-07-12T16:56:02.4255330-06:00 0HL68M7MJ7057 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0 (6438bdd5)
+2017-07-12T16:56:02.4265330-06:00 0HL68M7MJ7057 [INF] Executing action method "ATM_API.Controllers.AccountDetailsController.GetAccountDetails (ATM_API)" with arguments (["galpizar", "123456"]) - ModelState is Valid (ba7f4ac2)
+2017-07-12T16:56:02.4285330-06:00 0HL68M7MJ7057 [INF] Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE [u].[Username] = @__username_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-07-12T16:56:02.4335330-06:00 0HL68M7MJ7057 [INF] Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE ([u].[Username] = @__username_0) AND ([u].[Password] = @__password_1))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-07-12T16:56:02.4395330-06:00 0HL68M7MJ7057 [INF] Executed DbCommand (1ms) [Parameters=[@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id_User], [u].[FullName], [u].[Password], [u].[Username]
+FROM [Users] AS [u]
+WHERE ([u].[Username] = @__username_0) AND ([u].[Password] = @__password_1) (6438bdd5)
+2017-07-12T16:56:02.4455330-06:00 0HL68M7MJ7057 [INF] Executed DbCommand (0ms) [Parameters=[@__id_user_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id_Account], [a].[CreatedDate], [a].[CurrencyType], [a].[Description], [a].[Id_User], [a].[TotalAmount], [a].[isActive]
+FROM [AccountDetails] AS [a]
+WHERE ([a].[Id_User] = @__id_user_0) AND ([a].[isActive] = 1) (6438bdd5)
+2017-07-12T16:56:02.4465330-06:00 0HL68M7MJ7057 [INF] GetAccountDetails OK for the user:galpizar with password :123456 (44b57161)
+2017-07-12T16:56:02.4475330-06:00 0HL68M7MJ7057 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-07-12T16:56:02.4485330-06:00 0HL68M7MJ7057 [INF] Executed action "ATM_API.Controllers.AccountDetailsController.GetAccountDetails (ATM_API)" in 113.7653ms (afa2e885)
+2017-07-12T16:56:02.4495330-06:00 0HL68M7MJ7057 [INF] Request finished in 114.9887ms 200 application/json; charset=utf-8 (15c52c40)
+2017-07-12T17:00:12.3835330-06:00 0HL68M7MJ7058 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Users/galpizar/123456   (e5be5b71)
+2017-07-12T17:00:12.3895330-06:00 0HL68M7MJ7058 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0 (6438bdd5)
+2017-07-12T17:00:12.3905330-06:00 0HL68M7MJ7058 [INF] Executing action method "ATM_API.Controllers.UserController.ValidateUser (ATM_API)" with arguments (["galpizar", "123456"]) - ModelState is Valid (ba7f4ac2)
+2017-07-12T17:00:12.3915330-06:00 0HL68M7MJ7058 [INF] Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE [u].[Username] = @__username_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-07-12T17:00:12.3935330-06:00 0HL68M7MJ7058 [INF] Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE ([u].[Username] = @__username_0) AND ([u].[Password] = @__password_1))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-07-12T17:00:12.3945330-06:00 0HL68M7MJ7058 [INF] Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id_User], [u].[FullName], [u].[Password], [u].[Username]
+FROM [Users] AS [u]
+WHERE ([u].[Username] = @__username_0) AND ([u].[Password] = @__password_1) (6438bdd5)
+2017-07-12T17:00:12.3955330-06:00 0HL68M7MJ7058 [INF] Log In for user:galpizar with password :123456 (6d1e4ceb)
+2017-07-12T17:00:12.3955330-06:00 0HL68M7MJ7058 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-07-12T17:00:12.3965330-06:00 0HL68M7MJ7058 [INF] Executed action "ATM_API.Controllers.UserController.ValidateUser (ATM_API)" in 10.8909ms (afa2e885)
+2017-07-12T17:00:12.3975330-06:00 0HL68M7MJ7058 [INF] Request finished in 13.5974ms 200 application/json; charset=utf-8 (15c52c40)
+2017-07-12T17:04:44.2955330-06:00 0HL68M7MJ7059 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Users/galpizar/123456   (e5be5b71)
+2017-07-12T17:04:44.3005330-06:00 0HL68M7MJ7059 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0 (6438bdd5)
+2017-07-12T17:04:44.3015330-06:00 0HL68M7MJ7059 [INF] Executing action method "ATM_API.Controllers.UserController.ValidateUser (ATM_API)" with arguments (["galpizar", "123456"]) - ModelState is Valid (ba7f4ac2)
+2017-07-12T17:04:44.3045330-06:00 0HL68M7MJ7059 [INF] Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE [u].[Username] = @__username_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-07-12T17:04:44.3055330-06:00 0HL68M7MJ7059 [INF] Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE ([u].[Username] = @__username_0) AND ([u].[Password] = @__password_1))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-07-12T17:04:44.3065330-06:00 0HL68M7MJ7059 [INF] Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id_User], [u].[FullName], [u].[Password], [u].[Username]
+FROM [Users] AS [u]
+WHERE ([u].[Username] = @__username_0) AND ([u].[Password] = @__password_1) (6438bdd5)
+2017-07-12T17:04:44.3075330-06:00 0HL68M7MJ7059 [INF] Log In for user:galpizar with password :123456 (6d1e4ceb)
+2017-07-12T17:04:44.3075330-06:00 0HL68M7MJ7059 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-07-12T17:04:44.3085330-06:00 0HL68M7MJ7059 [INF] Executed action "ATM_API.Controllers.UserController.ValidateUser (ATM_API)" in 11.1903ms (afa2e885)
+2017-07-12T17:04:44.3085330-06:00 0HL68M7MJ7059 [INF] Request finished in 13.2783ms 200 application/json; charset=utf-8 (15c52c40)
+2017-07-12T17:05:46.3525330-06:00 0HL68M7MJ705A [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Users/galpizar/123456   (e5be5b71)
+2017-07-12T17:05:46.3555330-06:00 0HL68M7MJ705A [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0 (6438bdd5)
+2017-07-12T17:05:46.3555330-06:00 0HL68M7MJ705A [INF] Executing action method "ATM_API.Controllers.UserController.ValidateUser (ATM_API)" with arguments (["galpizar", "123456"]) - ModelState is Valid (ba7f4ac2)
+2017-07-12T17:05:46.3565330-06:00 0HL68M7MJ705A [INF] Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE [u].[Username] = @__username_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-07-12T17:05:46.3575330-06:00 0HL68M7MJ705A [INF] Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE ([u].[Username] = @__username_0) AND ([u].[Password] = @__password_1))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-07-12T17:05:46.3585330-06:00 0HL68M7MJ705A [INF] Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id_User], [u].[FullName], [u].[Password], [u].[Username]
+FROM [Users] AS [u]
+WHERE ([u].[Username] = @__username_0) AND ([u].[Password] = @__password_1) (6438bdd5)
+2017-07-12T17:05:46.3595330-06:00 0HL68M7MJ705A [INF] Log In for user:galpizar with password :123456 (6d1e4ceb)
+2017-07-12T17:05:46.3605330-06:00 0HL68M7MJ705A [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-07-12T17:05:46.3605330-06:00 0HL68M7MJ705A [INF] Executed action "ATM_API.Controllers.UserController.ValidateUser (ATM_API)" in 7.784ms (afa2e885)
+2017-07-12T17:05:46.3615330-06:00 0HL68M7MJ705A [INF] Request finished in 9.5573ms 200 application/json; charset=utf-8 (15c52c40)
+2017-07-12T17:12:56.0144131-06:00 0HL68M7MJ705B [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Users/galpizar/123456   (e5be5b71)
+2017-07-12T17:12:56.0244141-06:00 0HL68M7MJ705B [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0 (6438bdd5)
+2017-07-12T17:12:56.0264143-06:00 0HL68M7MJ705B [INF] Executing action method "ATM_API.Controllers.UserController.ValidateUser (ATM_API)" with arguments (["galpizar", "123456"]) - ModelState is Valid (ba7f4ac2)
+2017-07-12T17:12:56.0284145-06:00 0HL68M7MJ705B [INF] Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE [u].[Username] = @__username_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-07-12T17:12:56.0294146-06:00 0HL68M7MJ705B [INF] Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE ([u].[Username] = @__username_0) AND ([u].[Password] = @__password_1))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-07-12T17:12:56.0314148-06:00 0HL68M7MJ705B [INF] Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id_User], [u].[FullName], [u].[Password], [u].[Username]
+FROM [Users] AS [u]
+WHERE ([u].[Username] = @__username_0) AND ([u].[Password] = @__password_1) (6438bdd5)
+2017-07-12T17:12:56.0334150-06:00 0HL68M7MJ705B [INF] Log In for user:galpizar with password :123456 (6d1e4ceb)
+2017-07-12T17:12:56.0334150-06:00 0HL68M7MJ705B [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-07-12T17:12:56.0344151-06:00 0HL68M7MJ705B [INF] Executed action "ATM_API.Controllers.UserController.ValidateUser (ATM_API)" in 17.842ms (afa2e885)
+2017-07-12T17:12:56.0344151-06:00 0HL68M7MJ705B [INF] Request finished in 20.5226ms 200 application/json; charset=utf-8 (15c52c40)
+2017-07-12T17:17:18.5495330-06:00 0HL68M7MJ705C [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Users/galpizar/123456   (e5be5b71)
+2017-07-12T17:17:18.5525330-06:00 0HL68M7MJ705C [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0 (6438bdd5)
+2017-07-12T17:17:18.5535330-06:00 0HL68M7MJ705C [INF] Executing action method "ATM_API.Controllers.UserController.ValidateUser (ATM_API)" with arguments (["galpizar", "123456"]) - ModelState is Valid (ba7f4ac2)
+2017-07-12T17:17:18.5555330-06:00 0HL68M7MJ705C [INF] Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE [u].[Username] = @__username_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-07-12T17:17:18.5565330-06:00 0HL68M7MJ705C [INF] Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE ([u].[Username] = @__username_0) AND ([u].[Password] = @__password_1))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-07-12T17:17:18.5575330-06:00 0HL68M7MJ705C [INF] Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id_User], [u].[FullName], [u].[Password], [u].[Username]
+FROM [Users] AS [u]
+WHERE ([u].[Username] = @__username_0) AND ([u].[Password] = @__password_1) (6438bdd5)
+2017-07-12T17:17:18.5585330-06:00 0HL68M7MJ705C [INF] Log In for user:galpizar with password :123456 (6d1e4ceb)
+2017-07-12T17:17:18.5585330-06:00 0HL68M7MJ705C [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-07-12T17:17:18.5595330-06:00 0HL68M7MJ705C [INF] Executed action "ATM_API.Controllers.UserController.ValidateUser (ATM_API)" in 8.8885ms (afa2e885)
+2017-07-12T17:17:18.5615330-06:00 0HL68M7MJ705C [INF] Request finished in 11.8295ms 200 application/json; charset=utf-8 (15c52c40)
+2017-07-12T17:18:23.9885330-06:00 0HL68M7MJ705D [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Users/galpizar/123456   (e5be5b71)
+2017-07-12T17:18:23.9915330-06:00 0HL68M7MJ705D [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0 (6438bdd5)
+2017-07-12T17:18:23.9925330-06:00 0HL68M7MJ705D [INF] Executing action method "ATM_API.Controllers.UserController.ValidateUser (ATM_API)" with arguments (["galpizar", "123456"]) - ModelState is Valid (ba7f4ac2)
+2017-07-12T17:18:23.9945330-06:00 0HL68M7MJ705D [INF] Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE [u].[Username] = @__username_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-07-12T17:18:23.9955330-06:00 0HL68M7MJ705D [INF] Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE ([u].[Username] = @__username_0) AND ([u].[Password] = @__password_1))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-07-12T17:18:23.9965330-06:00 0HL68M7MJ705D [INF] Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id_User], [u].[FullName], [u].[Password], [u].[Username]
+FROM [Users] AS [u]
+WHERE ([u].[Username] = @__username_0) AND ([u].[Password] = @__password_1) (6438bdd5)
+2017-07-12T17:18:23.9975330-06:00 0HL68M7MJ705D [INF] Log In for user:galpizar with password :123456 (6d1e4ceb)
+2017-07-12T17:18:23.9975330-06:00 0HL68M7MJ705D [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-07-12T17:18:23.9985330-06:00 0HL68M7MJ705D [INF] Executed action "ATM_API.Controllers.UserController.ValidateUser (ATM_API)" in 8.8269ms (afa2e885)
+2017-07-12T17:18:23.9985330-06:00 0HL68M7MJ705D [INF] Request finished in 10.0656ms 200 application/json; charset=utf-8 (15c52c40)
+2017-07-12T18:51:04.2575330-06:00 0HL68M7MJ705E [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Users/galpizar/123456   (e5be5b71)
+2017-07-12T18:51:04.2615330-06:00 0HL68M7MJ705E [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0 (6438bdd5)
+2017-07-12T18:51:04.2625330-06:00 0HL68M7MJ705E [INF] Executing action method "ATM_API.Controllers.UserController.ValidateUser (ATM_API)" with arguments (["galpizar", "123456"]) - ModelState is Valid (ba7f4ac2)
+2017-07-12T18:51:04.2635330-06:00 0HL68M7MJ705E [INF] Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE [u].[Username] = @__username_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-07-12T18:51:04.2645330-06:00 0HL68M7MJ705E [INF] Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE ([u].[Username] = @__username_0) AND ([u].[Password] = @__password_1))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-07-12T18:51:04.2655330-06:00 0HL68M7MJ705E [INF] Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id_User], [u].[FullName], [u].[Password], [u].[Username]
+FROM [Users] AS [u]
+WHERE ([u].[Username] = @__username_0) AND ([u].[Password] = @__password_1) (6438bdd5)
+2017-07-12T18:51:04.2665330-06:00 0HL68M7MJ705E [INF] Log In for user:galpizar with password :123456 (6d1e4ceb)
+2017-07-12T18:51:04.2665330-06:00 0HL68M7MJ705E [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-07-12T18:51:04.2665330-06:00 0HL68M7MJ705E [INF] Executed action "ATM_API.Controllers.UserController.ValidateUser (ATM_API)" in 9.003ms (afa2e885)
+2017-07-12T18:51:04.2685330-06:00 0HL68M7MJ705E [INF] Request finished in 10.9853ms 200 application/json; charset=utf-8 (15c52c40)
+2017-07-12T18:55:40.9565330-06:00 0HL68M7MJ705F [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Users/galpizar/123456   (e5be5b71)
+2017-07-12T18:55:40.9605330-06:00 0HL68M7MJ705F [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0 (6438bdd5)
+2017-07-12T18:55:40.9615330-06:00 0HL68M7MJ705F [INF] Executing action method "ATM_API.Controllers.UserController.ValidateUser (ATM_API)" with arguments (["galpizar", "123456"]) - ModelState is Valid (ba7f4ac2)
+2017-07-12T18:55:40.9625330-06:00 0HL68M7MJ705F [INF] Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE [u].[Username] = @__username_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-07-12T18:55:40.9635330-06:00 0HL68M7MJ705F [INF] Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE ([u].[Username] = @__username_0) AND ([u].[Password] = @__password_1))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-07-12T18:55:40.9645330-06:00 0HL68M7MJ705F [INF] Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id_User], [u].[FullName], [u].[Password], [u].[Username]
+FROM [Users] AS [u]
+WHERE ([u].[Username] = @__username_0) AND ([u].[Password] = @__password_1) (6438bdd5)
+2017-07-12T18:55:40.9655330-06:00 0HL68M7MJ705F [INF] Log In for user:galpizar with password :123456 (6d1e4ceb)
+2017-07-12T18:55:40.9665330-06:00 0HL68M7MJ705F [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-07-12T18:55:40.9665330-06:00 0HL68M7MJ705F [INF] Executed action "ATM_API.Controllers.UserController.ValidateUser (ATM_API)" in 8.7434ms (afa2e885)
+2017-07-12T18:55:40.9685330-06:00 0HL68M7MJ705F [INF] Request finished in 11.2526ms 200 application/json; charset=utf-8 (15c52c40)
+2017-07-12T18:59:27.2065330-06:00 0HL68M7MJ705G [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Users/galpizar/123456/Accounts   (e5be5b71)
+2017-07-12T18:59:27.2435330-06:00 0HL68M7MJ705G [INF] Executed DbCommand (31ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0 (6438bdd5)
+2017-07-12T18:59:27.2445330-06:00 0HL68M7MJ705G [INF] Executing action method "ATM_API.Controllers.AccountDetailsController.GetAccountsDropDown (ATM_API)" with arguments (["galpizar", "123456"]) - ModelState is Valid (ba7f4ac2)
+2017-07-12T18:59:27.2505330-06:00 0HL68M7MJ705G [INF] Executed DbCommand (3ms) [Parameters=[@__username_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE [u].[Username] = @__username_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-07-12T18:59:27.2545330-06:00 0HL68M7MJ705G [INF] Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE ([u].[Username] = @__username_0) AND ([u].[Password] = @__password_1))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-07-12T18:59:27.2655330-06:00 0HL68M7MJ705G [INF] Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id_User], [u].[FullName], [u].[Password], [u].[Username]
+FROM [Users] AS [u]
+WHERE ([u].[Username] = @__username_0) AND ([u].[Password] = @__password_1) (6438bdd5)
+2017-07-12T18:59:27.2675330-06:00 0HL68M7MJ705G [INF] Executed DbCommand (0ms) [Parameters=[@__id_user_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id_Account], [a].[Description]
+FROM [AccountDetails] AS [a]
+WHERE [a].[Id_User] = @__id_user_0 (6438bdd5)
+2017-07-12T18:59:27.2675330-06:00 0HL68M7MJ705G [INF] GetAccountsDropDown OK for the user:galpizar with password :123456 (4a918317)
+2017-07-12T18:59:27.2685330-06:00 0HL68M7MJ705G [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-07-12T18:59:27.2685330-06:00 0HL68M7MJ705G [INF] Executed action "ATM_API.Controllers.AccountDetailsController.GetAccountsDropDown (ATM_API)" in 56.7472ms (afa2e885)
+2017-07-12T18:59:27.2695330-06:00 0HL68M7MJ705G [INF] Request finished in 62.8687ms 200 application/json; charset=utf-8 (15c52c40)
+2017-07-12T18:59:28.2025330-06:00 0HL68M7MJ705H [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Users/galpizar/123456/AccountDetails   (e5be5b71)
+2017-07-12T18:59:28.2335330-06:00 0HL68M7MJ705H [INF] Executed DbCommand (26ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0 (6438bdd5)
+2017-07-12T18:59:28.2355330-06:00 0HL68M7MJ705H [INF] Executing action method "ATM_API.Controllers.AccountDetailsController.GetAccountDetails (ATM_API)" with arguments (["galpizar", "123456"]) - ModelState is Valid (ba7f4ac2)
+2017-07-12T18:59:28.2375330-06:00 0HL68M7MJ705H [INF] Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE [u].[Username] = @__username_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-07-12T18:59:28.2385330-06:00 0HL68M7MJ705H [INF] Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE ([u].[Username] = @__username_0) AND ([u].[Password] = @__password_1))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-07-12T18:59:28.2445330-06:00 0HL68M7MJ705H [INF] Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id_User], [u].[FullName], [u].[Password], [u].[Username]
+FROM [Users] AS [u]
+WHERE ([u].[Username] = @__username_0) AND ([u].[Password] = @__password_1) (6438bdd5)
+2017-07-12T18:59:28.2475330-06:00 0HL68M7MJ705H [INF] Executed DbCommand (0ms) [Parameters=[@__id_user_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id_Account], [a].[CreatedDate], [a].[CurrencyType], [a].[Description], [a].[Id_User], [a].[TotalAmount], [a].[isActive]
+FROM [AccountDetails] AS [a]
+WHERE ([a].[Id_User] = @__id_user_0) AND ([a].[isActive] = 1) (6438bdd5)
+2017-07-12T18:59:28.2485330-06:00 0HL68M7MJ705H [INF] GetAccountDetails OK for the user:galpizar with password :123456 (44b57161)
+2017-07-12T18:59:28.2485330-06:00 0HL68M7MJ705H [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-07-12T18:59:28.2495330-06:00 0HL68M7MJ705H [INF] Executed action "ATM_API.Controllers.AccountDetailsController.GetAccountDetails (ATM_API)" in 43.3583ms (afa2e885)
+2017-07-12T18:59:28.2505330-06:00 0HL68M7MJ705H [INF] Request finished in 47.8396ms 200 application/json; charset=utf-8 (15c52c40)

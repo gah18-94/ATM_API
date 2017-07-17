@@ -166,7 +166,7 @@ namespace DataAccessLayer.Service
                 SqlDecimal account = _context.AccountDetails.Where(a => a.Id_Account == id_account).FirstOrDefault().TotalAmount;
                 account = account - amount;
                 _context.SaveChanges();
-                if (_context.AccountDetails.Where(a => a.Id_Account == id_account).FirstOrDefault().TotalAmount == account) {
+                if (account>=0) {
 
                     TransactionHistoryModel hist = new TransactionHistoryModel { };
                     hist.Description = description;

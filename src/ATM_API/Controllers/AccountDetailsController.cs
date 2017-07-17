@@ -30,6 +30,7 @@ namespace ATM_API.Controllers
         {
             try
             {
+                
                 if (!repo.UserExist(username, password))
                 {
                     logger.LogInformation($"Attemp failed to GetAccountsDropDown for the user:{username} with password :{password}");
